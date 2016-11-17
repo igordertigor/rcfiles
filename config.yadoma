@@ -16,3 +16,7 @@ i3:
         -
             src: i3config
             dest: .config/i3/config
+bash:
+    -
+        src: bashrc
+        dest: .bashrc
