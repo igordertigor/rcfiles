@@ -1,0 +1,18 @@
+zsh:
+    files:
+        -
+            src: zshrc
+            dest: .zshrc
+        -
+            src: zshrc.local
+            dest: .zshrc.local
+vim:
+    files:
+        -
+            src: vimrc
+            dest: .vimrc
+i3:
+    files:
+        -
+            src: i3config
+            dest: .config/i3/config
