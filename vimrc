@@ -1,17 +1,54 @@
+set encoding=utf-8
+
+set nocompatible
 filetype off
 
-call pathogen#infect()
-call pathogen#helptags()
+" Vundle package management
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+" Vundle manage vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Python specific
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+
+" Color
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+
+" Powerline
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" git
+Plugin 'tpope/vim-fugitive'
+call vundle#end()
 filetype plugin indent on
-syntax on
+
+set clipboard=unnamed
 
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
 
-set expandtab
-set tabstop=4
-set shiftwidth=4
+" Indentation
+"    Python
+au BufNewFile,BufRead *.py
+    \ set expandtab
+    \ set tabstop=4
+    \ set shiftwidth=4
+    \ set autoindent
+    \ set fileformat=unix
+
+"    Web tech
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+    \ set expandtab
 
 autocmd FileType make set noexpandtab
 autocmd FileType C    set noexpandtab
@@ -21,8 +58,12 @@ autocmd FileType tex set wrap linebreak nolist formatoptions+=l
 autocmd FileType md set wrap linebreak nolist formatoptions+=l
 
 set number
+let mapleader=" "
+
+" Folding
 set foldmethod=indent
-set autoindent
+set foldlevel=99
+nnoremap <space> za
 
 " map f3 and f4 to cumulatively toggle spellchecking in english and german
 " respectively
@@ -44,3 +85,54 @@ map <f4> :call SetSpelllang("de")<cr>
 
 " fix stuff after bad paste
 map <f7> <ESC>u: set paste<CR>.:set nopaste<CR>gi
+
+" splitting
+set splitbelow
+set splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" NERDTree config """""""""""""""""""""
+map t :NERDTreeToggle<cr>
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" SimpylFold """"""""""""""""""""""""""
+let g:SimpylFold_docstring_preview=1
+
+" YouCompleteMe """""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" syntastic config """"""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Color config """""""""""""""""""""""
+if has('gui_running')
+    set background=dark
+    colorscheme solarized
+else
+    colorscheme zenburn
+endif
+
+" VirtualEnv Support """"""""""""""""""
+py3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+" Syntax highlight
+let python_highlight_all=1
+syntax on
