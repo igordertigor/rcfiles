@@ -1,6 +1,13 @@
 # Configure prompt
 source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_python_version time background_jobs)
 
+zsh_python_version () {
+    python -c 'import sys; print("py{}.{}".format(sys.version_info[0], sys.version_info[1]))'
+}
+
+POWERLEVEL9K_CUSTOM_PYTHON_VERSION='zsh_python_version'
 
 export PATH=$PATH:$HOME/bin/
 
