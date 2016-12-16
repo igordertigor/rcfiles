@@ -1,17 +1,71 @@
+# Configure prompt
+source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
+
+
 export PATH=$PATH:$HOME/bin/
 
 stty stop undef
 stty start undef
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/code
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-
-function virtual_env_prompt () {
-    REPLY=${VIRTUAL_ENV+\(${VIRTUAL_ENV:t}\)}
+function check_build_py(){
+    if ! [[ -f "$PWD/build.py" ]] ; then
+        echo "No 'build.py' found in current directory"
+        return 1
+    fi
 }
-grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magena}' '%f'
 
-zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user at host path vcs percent
+function mkvenv2(){
+    if [ -n "${VIRTUAL_ENV}" ] ; then
+        echo "You already have a virtualenv active: $VIRTUAL_ENV"
+        return 1
+    fi
+    local venv_name
+    venv_name=${1:-.venv2}
+    if [ -e $venv_name ] ; then
+        echo "$venv_name already exists, aborting."
+        return 1
+    fi
+    echo "Will setup virtualenv in $venv_name"
+    virtualenv $venv_name
+    source $venv_name/bin/activate
+    pip install -U pip
+    if check_build_py ; then
+        pip install -U --pre pybuilder
+        pyb install_dependencies
+    fi
+}
+
+function mkvenv3(){
+    if [ -n "${VIRTUAL_ENV}" ] ; then
+        echo "You already have a virtualenv active: $VIRTUAL_ENV"
+        return 1
+    fi
+    local venv_name
+    venv_name=${1:-.venv3}
+    if [ -e $venv_name ] ; then
+        echo "$venv_name already exists, aborting."
+        return 1
+    fi
+    echo "Will setup virtualenv in $venv_name"
+    python3 -m venv $venv_name
+    source $venv_name/bin/activate
+    pip install -U pip
+    if check_build_py ; then
+        pip install -U --pre pip pybuilder
+        pyb install_dependencies
+    fi
+}
+
+alias venv2="source .venv2/bin/activate"
+alias venv3="source .venv3/bin/activate"
+
+setopt clobber
+
+gc () {
+    LBUFFER="git commit -m \""
+    RBUFFER="\""
+}
+zle -N gc gc
+bindkey '^gc' gc
 
 alias adb=$HOME/Android/Sdk/platform-tools/adb
