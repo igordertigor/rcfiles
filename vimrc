@@ -16,6 +16,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
 
 " Color
 Plugin 'jnurmine/Zenburn'
@@ -26,6 +27,17 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " git
 Plugin 'tpope/vim-fugitive'
+
+" Snippets? These seem to be quite cool, but don't work
+" Plugin 'Shuogo/neocomplete'
+" Plugin 'Shuogo/neosnippet'
+" Plugin 'Shuogo/neosnippet-snippets'
+
+" Center text
+Plugin 'junegunn/goyo.vim'
+Plugin 'reedes/vim-pencil'
+Plugin 'tpope/vim-markdown'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -37,17 +49,18 @@ set list
 " Indentation
 "    Python
 au BufNewFile,BufRead *.py
-    \ set expandtab
-    \ set tabstop=4
-    \ set shiftwidth=4
-    \ set autoindent
-    \ set fileformat=unix
+    \ set expandtab |
+    \ set tabstop=4 |
+    \ set shiftwidth=4 |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set colorcolumn=80
 
 "    Web tech
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
     \ set expandtab
 
 autocmd FileType make set noexpandtab
@@ -55,14 +68,23 @@ autocmd FileType C    set noexpandtab
 autocmd FileType cpp  set noexpandtab
 autocmd FileType rst set wrap linebreak nolist formatoptions+=l
 autocmd FileType tex set wrap linebreak nolist formatoptions+=l
-autocmd FileType md set wrap linebreak nolist formatoptions+=l
+autocmd FileType md,mkd,markdown
+    \ | call pencil#init()
+    \ | setlocal autoindent
+    \ | setlocal colorcolumn=0
+    \ | setlocal linebreak
+    \ | setlocal shiftwidth=4
+    \ | setlocal tabstop=4
+    \ | setlocal spell
+    \ | setlocal wrap
+    \ | setlocal expandtab
 
 set number
 let mapleader=" "
 
 " Folding
 set foldmethod=indent
-set foldlevel=99
+set foldlevel=3
 nnoremap <space> za
 
 " map f3 and f4 to cumulatively toggle spellchecking in english and german
@@ -95,7 +117,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " NERDTree config """""""""""""""""""""
-map t :NERDTreeToggle<cr>
+map <tab> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " SimpylFold """"""""""""""""""""""""""
@@ -104,6 +126,13 @@ let g:SimpylFold_docstring_preview=1
 " YouCompleteMe """""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Powerline """""""""""""""""""""""""""
+set laststatus=2
+let g:Powerline_symbols='fancy'
+
+" Goyo """"""""""""""""""""""""""""""""
+map m :Goyo<CR>
 
 " syntastic config """"""""""""""""""""
 set statusline+=%#warningmsg#
@@ -114,6 +143,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 4
 
 " Color config """""""""""""""""""""""
 if has('gui_running')
@@ -122,16 +152,6 @@ if has('gui_running')
 else
     colorscheme zenburn
 endif
-
-" VirtualEnv Support """"""""""""""""""
-py3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " Syntax highlight
 let python_highlight_all=1
