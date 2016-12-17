@@ -1,17 +1,3 @@
-#### Configure prompt
-export TERM="xterm-256color"
-source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_python_version time background_jobs)
-
-zsh_python_version () {
-    python -c 'import sys; print("py{}.{}".format(sys.version_info[0], sys.version_info[1]))'
-}
-
-POWERLEVEL9K_CUSTOM_PYTHON_VERSION='zsh_python_version'
-
-
-
 #### DJ action
 
 function find_dicer() {
@@ -105,3 +91,26 @@ export NVM_DIR="/home/ingo/.nvm"
 function load_nvm (){
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 }
+
+#### Configure prompt
+export TERM="xterm-256color"
+source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_intelligence time background_jobs)
+
+zsh_python_version () {
+    python -c 'import sys; print("py{}.{}".format(sys.version_info[0], sys.version_info[1]))'
+}
+
+zsh_intelligence () {
+    DICER=$(find_dicer)
+    if [[ ! -z $DICER ]]; then
+        echo D$DICER;
+    elif [[ -n $VIRTUAL_ENV ]]; then
+        zsh_python_version;
+    else
+        echo O
+    fi
+}
+
+POWERLEVEL9K_CUSTOM_INTELLIGENCE='zsh_intelligence'
