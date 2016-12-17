@@ -45,6 +45,9 @@ set clipboard=unnamed
 
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
+set expandtab
+set tabstop=4
+set shiftwidth=4
 
 " Indentation
 "    Python
