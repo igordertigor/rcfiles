@@ -1,0 +1,21 @@
+sysvenv3:
+    triforce:
+        venv_command: python3 -m venv
+        venv_prefix: /home/ingo/.virtualenvs/
+        install: true
+    ptipython: {}
+    yadoma: {}
+    20bn-ops-snippets:
+        url: git+ssh://git@github.com/TwentyBN/20bn-ops-snippets
+        symlink: ['20ssh', '20bn-ssh-helper.py']
+    flake8: {}
+    awscli:
+        symlink: ['aws']
+    breen:
+        url: git+ssh://git@github.com/TwentyBN/20bn-breen
+    twentybn:
+        url: git+ssh://git@github.com/TwentyBN/20bn-client-python
+        symlink: ['twentybn_cli.py']
+    deployer_cli:
+        url: git+ssh://git@github.com/TwentyBN/20bn-deployer-cli
+        symlink: ['deployer_cli.py']

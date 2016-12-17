@@ -1,0 +1,8 @@
+sysvenv3:
+    triforce:
+        venv_command: python3 -m venv
+        venv_prefix: /home/ingo/.virtualenvs/
+        install: true
+    ptipython: {}
+    yadoma: {}
+    flake8: {}
