@@ -16,6 +16,9 @@ i3:
         -
             src: i3config
             dest: .config/i3/config
+        -
+            src: i3status
+            dest: .config/i3/status
 bash:
     files:
         -
