@@ -51,7 +51,7 @@ set shiftwidth=4
 
 " Indentation
 "    Python
-au BufNewFile,BufRead *.py
+autocmd FileType python
     \ set expandtab |
     \ set tabstop=4 |
     \ set shiftwidth=4 |
@@ -60,7 +60,7 @@ au BufNewFile,BufRead *.py
     \ set colorcolumn=80
 
 "    Web tech
-au BufNewFile,BufRead *.js, *.html, *.css
+autocmd BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
