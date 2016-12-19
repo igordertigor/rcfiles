@@ -109,7 +109,7 @@ zsh_intelligence () {
     elif [[ -n $VIRTUAL_ENV ]]; then
         zsh_python_version;
     else
-        echo O
+        echo "~"
     fi
 }
 
