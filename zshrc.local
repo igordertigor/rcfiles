@@ -87,6 +87,7 @@ stty stop undef
 stty start undef
 export PATH=$PATH:$HOME/bin/
 alias adb=$HOME/Android/Sdk/platform-tools/adb
+export LESS='-g -i -M -R -S -w -z-4'
 
 gc () {
     LBUFFER="git commit -m \""
