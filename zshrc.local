@@ -15,6 +15,18 @@ function find_dicer() {
 # }
 alias xwax="$HOME/code/xwax/xwax -g /1.4 --dicer $(find_dicer) -s /bin/cat -i $HOME/code/xwax/import -m 4 -a plughw:Audio4DJ,0,0 -a plughw:Audio4DJ,0,1"
 
+#### Git
+
+gic () {
+    LBUFFER="git commit -m \""
+    RBUFFER="\""
+}
+zle -N gic gic
+bindkey gic gic
+
+alias gap="git add -p"
+alias gis="git status"
+# alias gic="git commit -m ''"
 
 #### Python stuff
 
@@ -91,6 +103,7 @@ export NVM_DIR="/home/ingo/.nvm"
 function load_nvm (){
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 }
+
 
 #### Configure prompt
 export TERM="xterm-256color"
