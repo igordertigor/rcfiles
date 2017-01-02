@@ -22,11 +22,19 @@ gic () {
     RBUFFER="\""
 }
 zle -N gic gic
-bindkey gic gic
+bindkey "git c" gic
 
-alias gap="git add -p"
-alias gis="git status"
-# alias gic="git commit -m ''"
+gis () {
+    LBUFFER="git status"
+}
+zle -N gis gis
+bindkey "git s" gis
+
+gap () {
+    LBUFFER="git add -p"
+}
+zle -N gap gap
+bindkey "git a" gap
 
 #### Python stuff
 
@@ -88,6 +96,7 @@ stty start undef
 export PATH=$PATH:$HOME/bin/
 alias adb=$HOME/Android/Sdk/platform-tools/adb
 export LESS='-g -i -M -R -S -w -z-4'
+export EDITOR='vim'
 
 gc () {
     LBUFFER="git commit -m \""
