@@ -61,7 +61,17 @@ autocmd FileType python
     \ set colorcolumn=80
 
 "    Web tech
-autocmd BufNewFile,BufRead *.js, *.html, *.css
+autocmd FileType html
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
+autocmd FileType javascript
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
+autocmd FileType css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
