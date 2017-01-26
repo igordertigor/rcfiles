@@ -17,7 +17,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
-Plugin 'alfredodeza/coverage.vim'
+Plugin 'alfredodeza/coveragepy.vim'
 
 " Color
 Plugin 'jnurmine/Zenburn'
