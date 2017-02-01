@@ -77,6 +77,12 @@ autocmd FileType css
     \ set shiftwidth=2 |
     \ set expandtab
 
+autocmd FileType scss
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
+
 autocmd FileType make set noexpandtab
 autocmd FileType C    set noexpandtab
 autocmd FileType cpp  set noexpandtab
