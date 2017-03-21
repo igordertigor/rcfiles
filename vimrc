@@ -39,6 +39,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-markdown'
 
+" Latex
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -82,6 +85,13 @@ autocmd FileType scss
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
     \ set expandtab
+
+autocmd FileType yaml
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
+
 
 autocmd FileType make set noexpandtab
 autocmd FileType C    set noexpandtab

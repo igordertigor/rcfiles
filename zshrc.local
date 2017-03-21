@@ -96,6 +96,7 @@ stty start undef
 export PATH=$PATH:$HOME/bin/
 alias adb=$HOME/Android/Sdk/platform-tools/adb
 export LESS='-g -i -M -R -S -w -z-4'
+export VISUAL='vim'
 export EDITOR='vim'
 export VISUAL='vim'
 
@@ -154,3 +155,7 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='214'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='236'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='196'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='236'
+
+if [ $(hostname) = "riemann" ]; then
+    export BUP_DIR=/media/backup/riemann-backup/
+fi
