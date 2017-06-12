@@ -161,6 +161,6 @@ if [ $(hostname) = "riemann" ]; then
 fi
 
 gks () {
-    echo "Applying git $1";
+    echo "Applying function: git key sync $1";
     pmount /dev/sdb1 && git $1 && sleep .5 && pumount /dev/sdb1
 }
