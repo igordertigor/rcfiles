@@ -162,5 +162,11 @@ fi
 
 gks () {
     echo "Applying function: git key sync $1";
-    pmount /dev/sdb1 && git $1 && sleep .5 && pumount /dev/sdb1
+    if [[ $HOST == "leibniz" ]]; then
+        DEVICE=/dev/sda1
+    else
+        DEVICE=/dev/sdb1
+    fi
+    echo "Using device $DEVICE"
+    pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
