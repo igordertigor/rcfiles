@@ -108,6 +108,7 @@ autocmd FileType md,mkd,markdown
     \ | setlocal spell
     \ | setlocal wrap
     \ | setlocal expandtab
+let g:pencil#autoformat = 0
 
 set number
 let mapleader=" "
