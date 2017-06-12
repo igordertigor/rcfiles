@@ -159,3 +159,8 @@ POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='236'
 if [ $(hostname) = "riemann" ]; then
     export BUP_DIR=/media/backup/riemann-backup/
 fi
+
+gks () {
+    echo "Applying git $1";
+    pmount /dev/sdb1 && git $1 && sleep .5 && pumount /dev/sdb1
+}
