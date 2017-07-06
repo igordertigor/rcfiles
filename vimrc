@@ -40,7 +40,7 @@ Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-markdown'
 
 " Latex
-Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on
@@ -189,3 +189,7 @@ endif
 " Syntax highlight
 let python_highlight_all=1
 syntax on
+
+" latex using vimtex
+let &rtp = '~/.vim/bundle/vimtex,' . &rtp
+let &rtp .= ',~/.vim/bundle/vimtex/after'
