@@ -195,6 +195,9 @@ assign [class="google-chrome"] 3
 # make notifications floating
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 
+# Make matplotlib floating
+for_window [class="Tk" instance="tk"] floating enable
+
 exec synclient TapButton3=2
 
 # Things to be started by default
