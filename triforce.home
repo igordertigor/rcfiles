@@ -6,3 +6,4 @@ sysvenv3:
     ptipython: {}
     yadoma: {}
     flake8: {}
+    pomo: {}
