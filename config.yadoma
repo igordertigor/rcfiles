@@ -24,3 +24,8 @@ bash:
         -
             src: bashrc
             dest: .bashrc
+pomo:
+    files:
+        -
+            src: pomorc
+            dest: .pomorc
