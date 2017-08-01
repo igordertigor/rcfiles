@@ -36,6 +36,18 @@ gap () {
 zle -N gap gap
 bindkey "git a" gap
 
+with_usb () {
+    if [[ $HOST == "leibniz" ]]; then
+        DEVICE=/dev/sda1
+    else
+        DEVICE=/dev/sdb1
+    fi
+    LBUFFER="pmount $DEVICE && "
+    RBUFFER=" && sleep 0.5 && pumount $DEVICE"
+}
+zle -N with_usb with_usb
+bindkey "usb " with_usb
+
 #### Python stuff
 
 function check_build_py(){
