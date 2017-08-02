@@ -57,3 +57,9 @@ timer](https://en.wikipedia.org/wiki/Pomodoro_Technique). There are many
 pomorodi timers out there, but -- surprisingly -- none of them had good
 tracking of overtime, which I think is important if you want to improve on your
 pomodori planning.
+
+To get the python tools running, you would simply create a (temporary)
+virtual environment, install *triforce* into it, run *triforce* with the
+correct config and you're set. Triforce will also install *yadoma*, so if
+you start with triforce, you should be able to use *yadoma* globally
+afterwards to create your symlinks.
