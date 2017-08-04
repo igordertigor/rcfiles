@@ -175,7 +175,7 @@ fi
 
 gks () {
     echo "Applying function: git key sync $1";
-    if [[ $HOST == "leibniz" ]]; then
+    if [[ $HOST == "wertheimer" ]]; then
         DEVICE=/dev/sda1
     else
         DEVICE=/dev/sdb1
