@@ -32,3 +32,9 @@ pomo:
         -
             src: pomorc
             dest: .pomorc
+
+scripts:
+    files:
+        -
+            src: scripts/backup.sh
+            dest: bin/backup
