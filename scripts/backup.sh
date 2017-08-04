@@ -10,6 +10,16 @@ borg create -v --stats \
     $HOME \
     --progress \
     --exclude $HOME/Downloads \
+    --exclude $HOME/.fonts \
+    --exclude $HOME/.gconf \
+    --exclude $HOME/.gnome \
+    --exclude $HOME/.ssh \
+    --exclude $HOME/.cache \
+    --exclude $HOME/.ICEauthority \
+    --exclude $HOME/.dbus \
+    --exclude $HOME/.gnupg \
+    --exclude $HOME/.pki \
+    --exclude $HOME/.local \
     --exclude '*.pyc' \
     --exclude '.venv?'
 
