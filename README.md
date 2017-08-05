@@ -16,6 +16,15 @@ that I don't know about?" Here are some answers:
   be able to open windows, but you actually don't want to do a lot of mouse
   interaction with your computer. If you really like your mouse, an auto-tiling
   window manager might not be for you.
+
+  To install `i3`, you should use the package manager of your linux
+  distribution. For debian derivatives (e.g. ubuntu) use the command
+
+    apt update
+    apt install i3
+
+  You would afterwards have to log out and log back into an "i3-session".
+
 - [bash](https://www.gnu.org/software/bash/) is a shell, i.e. a comand line
   interpreter. It is the default shell that runs in the terminal windows of
   MacOS or Ubuntu. It's a pretty amazing piece of software, but I rarely use it.
