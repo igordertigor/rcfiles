@@ -69,7 +69,10 @@ that I don't know about?" Here are some answers:
   level where they would be more easily maintained as plugins. There are
   multiple plugin managers out there and I'm using *vundle* because I don't know
   better. If you want to actually use the plugins that I have in my config, you
-  would have to install them. You do that from within *vim* by typing (in normal mode):
+  would have to install them. They are managed using
+  [vundle](https://github.com/VundleVim/Vundle.vim). Once you have vundle
+      in place, you can install the plugins.
+  You do that from within *vim* by typing (in normal mode):
 
     :PluginInstall
 
