@@ -29,7 +29,9 @@ that I don't know about?" Here are some answers:
   interpreter. It is the default shell that runs in the terminal windows of
   MacOS or Ubuntu. It's a pretty amazing piece of software, but I rarely use it.
   Hence the simple copy of some standard configuration (I believe that I modified
-  something but I can't quite remember what).
+  something but I can't quite remember what). In most linux distributions,
+  bash is already installed.
+
 - [zsh](http://www.zsh.org/) is another shell. It has some (very few) additional
   features compared to bash, but there has been some kind of a code competition
   of writing the most amazing config file for zsh. I'm building on the zsh grml
