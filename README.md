@@ -38,6 +38,28 @@ that I don't know about?" Here are some answers:
   config and I added a couple of nice local functions. If you want to use zsh
   temporarily, you can just type `zsh` on the command line. If you actually
   want to switch to zsh permanently, you would have to use `chsh`.
+
+  To install `zsh` use your package manager like this
+
+    apt update
+    apt install zsh
+
+  The zsh configuraton depends on the
+  [powerlevel9k](https://github.com/bhilburn/powerlevel9k) prompt. To get
+  that running properly, you might also want to install the
+  [nerd-fonts](https://github.com/ryanoasis/nerd-fonts). To use zsh as
+  your default shell, you have to set that up as default using
+
+    which zsh
+    chsh
+
+  Where you enter the output of the first command when you're prompted for
+  the preferred login shell by the second command.
+
+  Note that zsh configuration is more than just a fancy prompt but also
+  a couple of useful commands. To learn those, take a look at the
+  [refcard](https://grml.org/zsh/grml-zsh-refcard.pdf).
+
 - [vim](http://www.vim.org/) is a text editor with a steep learning curve. Yet,
   vim is by many (including myself) considered the best text editor out there.
   So once you've mastered the learning curve, you will never want to miss
