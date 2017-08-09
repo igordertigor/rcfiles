@@ -33,6 +33,12 @@ pomo:
             src: pomorc
             dest: .pomorc
 
+ptpython:
+    files:
+        -
+            src: ptpython.py
+            dest: .ptpython/config.py
+
 scripts:
     files:
         -
