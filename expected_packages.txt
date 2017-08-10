@@ -1,2 +1,5 @@
 inkscape
 gimp
+pandoc
+wkhtmltopdf
+zathura
