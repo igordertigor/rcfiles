@@ -3,3 +3,5 @@ gimp
 pandoc
 wkhtmltopdf
 zathura
+mutt
+offlineimap

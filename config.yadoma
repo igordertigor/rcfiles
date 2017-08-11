@@ -44,3 +44,21 @@ scripts:
         -
             src: scripts/backup.sh
             dest: bin/backup
+
+mail:
+    files:
+        -
+            src: mail/mbsyncrc
+            dest: .mbsyncrc
+        -
+            src: mail/muttrc
+            dest: .muttrc
+        -
+            src: mail/mutt-zenburn-colors
+            dest: .mutt_colors_zenburn
+        - 
+            src: mail/msmtprc
+            dest: .msmtprc
+        -
+            src: mail/signature.txt
+            dest: .signature.txt
