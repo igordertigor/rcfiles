@@ -1,0 +1,51 @@
+# YORKU
+
+IMAPAccount yorku
+Host mypost.yorku.ca
+User "ifruend"
+PassCmd "lpass show --password 5564893240753051762"
+UseIMAPS yes
+
+IMAPStore yorku-remote
+Account yorku
+UseNameSpace yes
+Path INBOX
+
+MaildirStore yorku-local
+Path ~/mail/yorku/
+Inbox ~/mail/yorku/INBOX/
+
+Channel yorku
+Master :yorku-remote:
+Slave :yorku-local:
+Patterns "INBOX" "INBOX/Sent Items" "INBOX/Spam" "INBOX/Papers" "INBOX/Personal" "INBOX/Admin/Commitees" "INBOX/Admin/Personal" "INBOX/Admin/Budgeting" "INBOX/Admin/CVR" "INBOX/Grants" "INBOX/Teaching" "INBOX/Correspondence" "INBOX/Random"
+Create Slave
+Expunge Both
+Sync All
+SyncState *
+
+# INGOFRUEND
+
+IMAPAccount ingofruend
+Host sslmailpool.ispgateway.de
+User "mail@ingofruend.net"
+PassCmd "lpass show --password 6169987141134823544"
+UseIMAPS yes
+
+IMAPStore ingofruend-remote
+Account ingofruend
+UseNameSpace yes
+Path INBOX
+
+MaildirStore ingofruend-local
+Path ~/mail/ingofruend/
+Inbox ~/mail/ingofruend/INBOX/
+
+Channel ingofruend
+Master :ingofruend-remote:
+Slave :ingofruend-local:
+Patterns "INBOX" "INBOX/Sent" "INBOX/SPAM"
+Create Slave
+Expunge Both
+Sync All
+SyncState *
