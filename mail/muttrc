@@ -65,8 +65,8 @@ bind pager i exit
 
 set sidebar_width=25
 set sidebar_visible=no
-bind index,pager \ck sidebar-prev
-bind index,pager \cj sidebar-next
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
 bind index,pager \co sidebar-open
 
 macro index \cv '<enter-command>toggle sidebar_visible<enter><refresh>'
