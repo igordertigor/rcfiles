@@ -2,7 +2,8 @@
 set mbox_type=Maildir
 set folder=$HOME/mail
 set spoolfile=+"yorku/INBOX"
-set sendmail="/usr/bin/msmtp"
+# set sendmail="/usr/bin/msmtp"
+set sendmail="$HOME/bin/xcheck_email_for_attachment.sh"
 
 set header_cache=$HOME/mail/hcache
 set index_format="%4C %Z %{%y %b %d} %-15.15L (%4l) %s"
@@ -53,17 +54,31 @@ mailboxes \
     =yorku/INBOX/.Random \
     =ingofruend/INBOX
 
+# Identities
+folder-hook "yorku/*" set from=ifruend@yorku.ca
+folder-hook "ingofruend/*" set from=mail@ingofruend.net
+
+
 # Shortcuts
 macro generic,index,pager M "<shell-escape>mbsync -a<return>" "sync mailboxes"
 bind pager i exit
 
-set sidebar_width=30
-set sidebar_visible=yes
-bind index,pager \Cp sidebar-prev
-bind index,pager \Cn sidebar-next
-bind index,pager \Co sidebar-open
+set sidebar_width=25
+set sidebar_visible=no
+bind index,pager \ck sidebar-prev
+bind index,pager \cj sidebar-next
+bind index,pager \co sidebar-open
 
 macro index \cv '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager \cv '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
 set signature="~/.signature.txt"
+send-hook "~f ifruend@yorkku.ca" set signature="~/.signature.txt"
+send-hook "~f mail@ingofruend.net" set signature=""
+
+# Addresses
+set query_command="abook --mut-query %s"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+
+auto_view text/html
