@@ -62,6 +62,8 @@ folder-hook "ingofruend/*" set from=mail@ingofruend.net
 # Shortcuts
 macro generic,index,pager M "<shell-escape>mbsync -a<return>" "sync mailboxes"
 bind pager i exit
+# bind index <return> display-message
+
 
 set sidebar_width=25
 set sidebar_visible=no
@@ -73,12 +75,15 @@ macro index \cv '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager \cv '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
 set signature="~/.signature.txt"
-send-hook "~f ifruend@yorkku.ca" set signature="~/.signature.txt"
+send-hook "~f ifruend@yorku.ca" set signature="~/.signature.txt"
 send-hook "~f mail@ingofruend.net" set signature=""
 
+save-hook "~t ifruend@yorku.ca" +yorku/INBOX/
+
 # Addresses
-set query_command="abook --mut-query %s"
+set query_command="abook --mutt-query %s"
 macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
 macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
 
 auto_view text/html
+alternative_order text/plain text/enriched text/html

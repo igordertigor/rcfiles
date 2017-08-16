@@ -193,3 +193,5 @@ syntax on
 " latex using vimtex
 let &rtp = '~/.vim/bundle/vimtex,' . &rtp
 let &rtp .= ',~/.vim/bundle/vimtex/after'
+let g:tex_flavor = 'pdflatex'
+let g:vimtex_view_method = 'zathura'
