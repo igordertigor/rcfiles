@@ -30,4 +30,4 @@ borg prune -v $REPOSITORY --prefix '{hostname}-' \
     --keep-monthly=6 \
     --keep-yearly=3
 
-pumount backup$1
+pumount /media/backup-disk
