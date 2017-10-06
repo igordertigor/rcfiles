@@ -29,3 +29,8 @@ pomo:
         -
             src: pomorc
             dest: .pomorc
+cmus:
+    files:
+        -
+            src: cmusrc
+            dest: .config/cmus/rc

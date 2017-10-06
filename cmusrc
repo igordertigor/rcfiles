@@ -1,0 +1,28 @@
+colorscheme zenburn
+confirm_run=false  # default true
+
+bind common <f1> shell xwax-client load 1 {}
+bind common <f2> shell xwax-client recue 1
+bind common <f3> shell xwax-client disconnect 1
+bind common <f4> shell xwax-client reconnect 1
+
+bind common <f5> shell xwax-client load 2 {}
+bind common <f6> shell xwax-client recue 2
+bind common <f7> shell xwax-client disconnect 2
+bind common <f8> shell xwax-client reconnect 2
+
+set format_playlist=[%3{bpm}] %-21%a %3n. %t%= %d %{bpm}
+set format_trackwin_va=[%3{bpm}] %-21a %3n. %t %= %y %d
+set format_trackwin=[%3{bpm}] %3n. %t %= %y %d
+
+# Shortcut for sorting by bpm
+bind common B run set lib_sort=bpm
+bind common A run set lib_sort=artist,title
+
+# Filters (e.g.)
+fset Hip-Hop=genre="Hip-Hop"&!genre="Deutsch"
+fset House=genre="House"
+fset Afro=genre="Afro*"
+fset Rock=genre="Rock"
+fset FunkAndSoul=genre="Soul"|genre="Funk"
+fset Caribbean=genre="Dancehall"|genre="Soca"|genre="Zouk"
