@@ -130,7 +130,8 @@ function load_nvm (){
 
 
 #### Configure prompt
-POWERLEVEL9K_MODE='awesome-fontconfig'
+# POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_MODE='nerdfont-complete'
 export TERM="xterm-256color"
 source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
@@ -174,7 +175,7 @@ fi
 
 gks () {
     echo "Applying function: git key sync $1";
-    if [[ $HOST == "leibniz" ]]; then
+    if [[ $HOST == "wertheimer" ]]; then
         DEVICE=/dev/sda1
     else
         DEVICE=/dev/sdb1

@@ -1,0 +1,89 @@
+# General information
+set mbox_type=Maildir
+set folder=$HOME/mail
+set spoolfile=+"yorku/INBOX"
+# set sendmail="/usr/bin/msmtp"
+set sendmail="$HOME/bin/xcheck_email_for_attachment.sh"
+
+set header_cache=$HOME/mail/hcache
+set index_format="%4C %Z %{%y %b %d} %-15.15L (%4l) %s"
+
+source .mutt_colors_zenburn
+
+# Account settings
+set realname="Ingo Fruend"
+set from=ifruend@yorku.ca
+set envelope_from=yes
+set use_from=yes
+
+# Some convenience
+set move=no
+set beep=no
+set print_command="muttprint"
+set edit_headers=yes
+
+# Editing
+set editor="vim +/^$"
+set send_charset="iso-8859-1:utf-8"
+set askcc=yes
+
+# Viewing
+set sort=threads
+set sort_aux=reverse-last-date-received
+set pager_index_lines=6
+
+# Headers
+ignore *
+unignore date from to cc subject resent-from reply-to x-mailer x-spam-status
+hdr_order Date: From: To: Cc: Subject: X-Spam-Status:
+
+# Setting up mailboxes
+mailboxes \
+    =yorku/INBOX \
+    =yorku/INBOX/.Admin \
+    =yorku/INBOX/.Admin/.Budgeting \
+    =yorku/INBOX/.Admin/.Commitees \
+    =yorku/INBOX/.Admin/.CVR \
+    =yorku/INBOX/.Admin/.Personal \
+    =yorku/INBOX/.Correspondence \
+    =yorku/INBOX/.Grants \
+    =yorku/INBOX/.Papers \
+    =yorku/INBOX/.Personal \
+    =yorku/INBOX/.Sent\ Items \
+    =yorku/INBOX/.Teaching \
+    =yorku/INBOX/.Random \
+    =ingofruend/INBOX
+
+# Identities
+folder-hook "yorku/*" set from=ifruend@yorku.ca
+folder-hook "ingofruend/*" set from=mail@ingofruend.net
+
+
+# Shortcuts
+macro generic,index,pager M "<shell-escape>mbsync -a<return>" "sync mailboxes"
+bind pager i exit
+# bind index <return> display-message
+
+
+set sidebar_width=25
+set sidebar_visible=no
+bind index,pager K sidebar-prev
+bind index,pager J sidebar-next
+bind index,pager \co sidebar-open
+
+macro index \cv '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager \cv '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+set signature="~/.signature.txt"
+send-hook "~f ifruend@yorku.ca" set signature="~/.signature.txt"
+send-hook "~f mail@ingofruend.net" set signature=""
+
+save-hook "~t ifruend@yorku.ca" +yorku/INBOX/
+
+# Addresses
+set query_command="abook --mutt-query %s"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html

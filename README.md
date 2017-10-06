@@ -16,17 +16,50 @@ that I don't know about?" Here are some answers:
   be able to open windows, but you actually don't want to do a lot of mouse
   interaction with your computer. If you really like your mouse, an auto-tiling
   window manager might not be for you.
+
+  To install `i3`, you should use the package manager of your linux
+  distribution. For debian derivatives (e.g. ubuntu) use the command
+
+    apt update
+    apt install i3
+
+  You would afterwards have to log out and log back into an "i3-session".
+
 - [bash](https://www.gnu.org/software/bash/) is a shell, i.e. a comand line
   interpreter. It is the default shell that runs in the terminal windows of
   MacOS or Ubuntu. It's a pretty amazing piece of software, but I rarely use it.
   Hence the simple copy of some standard configuration (I believe that I modified
-  something but I can't quite remember what).
+  something but I can't quite remember what). In most linux distributions,
+  bash is already installed.
+
 - [zsh](http://www.zsh.org/) is another shell. It has some (very few) additional
   features compared to bash, but there has been some kind of a code competition
   of writing the most amazing config file for zsh. I'm building on the zsh grml
   config and I added a couple of nice local functions. If you want to use zsh
   temporarily, you can just type `zsh` on the command line. If you actually
   want to switch to zsh permanently, you would have to use `chsh`.
+
+  To install `zsh` use your package manager like this
+
+    apt update
+    apt install zsh
+
+  The zsh configuraton depends on the
+  [powerlevel9k](https://github.com/bhilburn/powerlevel9k) prompt. To get
+  that running properly, you might also want to install the
+  [nerd-fonts](https://github.com/ryanoasis/nerd-fonts). To use zsh as
+  your default shell, you have to set that up as default using
+
+    which zsh
+    chsh
+
+  Where you enter the output of the first command when you're prompted for
+  the preferred login shell by the second command.
+
+  Note that zsh configuration is more than just a fancy prompt but also
+  a couple of useful commands. To learn those, take a look at the
+  [refcard](https://grml.org/zsh/grml-zsh-refcard.pdf).
+
 - [vim](http://www.vim.org/) is a text editor with a steep learning curve. Yet,
   vim is by many (including myself) considered the best text editor out there.
   So once you've mastered the learning curve, you will never want to miss
@@ -36,7 +69,10 @@ that I don't know about?" Here are some answers:
   level where they would be more easily maintained as plugins. There are
   multiple plugin managers out there and I'm using *vundle* because I don't know
   better. If you want to actually use the plugins that I have in my config, you
-  would have to install them. You do that from within *vim* by typing (in normal mode):
+  would have to install them. They are managed using
+  [vundle](https://github.com/VundleVim/Vundle.vim). Once you have vundle
+      in place, you can install the plugins.
+  You do that from within *vim* by typing (in normal mode):
 
     :PluginInstall
 
@@ -57,6 +93,10 @@ timer](https://en.wikipedia.org/wiki/Pomodoro_Technique). There are many
 pomorodi timers out there, but -- surprisingly -- none of them had good
 tracking of overtime, which I think is important if you want to improve on your
 pomodori planning.
+If you just want everything to work, I suggest just creating a virtual
+environment, installing triforce and running it with the configuration you
+would like to use. Not that triforce will expect a folder in your home
+directory called `bin`.
 
 To get the python tools running, you would simply create a (temporary)
 virtual environment, install *triforce* into it, run *triforce* with the
