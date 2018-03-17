@@ -48,6 +48,11 @@ scripts:
         -
             src: scripts/backup.sh
             dest: bin/backup
+usiq:
+    files:
+        -
+            src: usiqrc
+            dest: .config/usiq/usiqrc
 
 mail:
     files:
@@ -66,6 +71,3 @@ mail:
         -
             src: mail/signature.txt
             dest: .signature.txt
-        -
-            src: mail/mailcap
-            desc: .mailcap

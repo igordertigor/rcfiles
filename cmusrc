@@ -1,28 +1,41 @@
 colorscheme zenburn
 
-bind -f common F1 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client load 1 /home/ingo/bin/cmus-remote
+bind -f common F1 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client load 1 "$(/home/ingo/bin/cmus-remote --raw 'echo {}')" && cmus-cover-set left "$(/home/ingo/bin/cmus-remote --raw 'echo {}')"
 bind -f common F2 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client recue 1
 bind -f common F3 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client disconnect 1
 bind -f common F4 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client reconnect 1
 
-bind -f common F5 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client load 2 /home/ingo/bin/cmus-remote
+bind -f common F5 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client load 2 "$(/home/ingo/bin/cmus-remote --raw 'echo {}')" && cmus-cover-set right "$(/home/ingo/bin/cmus-remote --raw 'echo {}')"
 bind -f common F6 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client recue 2
 bind -f common F7 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client disconnect 2
 bind -f common F8 shell /home/ingo/code/xwax-client/.venv3/bin/xwax-client reconnect 2
 
-set format_playlist=[%3{bpm}] %-21a %3n. %t%= %y %d
-set format_playlist_va=[%3{bpm}] %-21a %3n. %t %= %y %d
+set format_playlist=[%3{bpm}] %3n. %-30a - %t%= %y %d
+set format_playlist_va=[%3{bpm}] %3n. %-30a - %t %= %y %d
 set format_trackwin=[%3{bpm}] %3n. %t %= %y %d
-set format_trackwin_va=[%3{bpm}] %-21a %3n. %t %= %y %d
+set format_trackwin_va=[%3{bpm}] %3n. %-30a - %t %= %y %d
+
+set status_display_program=cmus-cover-set
 
 # Shortcut for sorting by bpm
 bind -f common B run set lib_sort=bpm
 bind -f common A run set lib_sort=artist album discnumber tracknumber title
 
+bind -f common C shell cmus-cover-set "$(/home/ingo/bin/cmus-remote --raw 'echo {}')"
+
 # Filters (e.g.)
-fset Hip-Hop=genre="Hip-Hop"&!genre="Deutsch"
-fset House=genre="House"
+fset Hip-Hop=genre="*Hip-Hop*"&!genre="Deutsch"
+fset House=genre="*House*"|genre="*Kwaito*"
+fset Techno=genre="*House*"|genre="*techno*"
 fset Afro=genre="Afro*"
-fset Rock=genre="Rock"
+fset AcidJazz=genre="Acid*"
+fset Kwaito=genre="*Kwaito*"
+fset Rock=genre="*Rock"
+fset Reggae=genre="Reggae"
+fset Electronica=genre="*Electronica*"
 fset FunkAndSoul=genre="Soul"|genre="Funk"
 fset Caribbean=genre="Dancehall"|genre="Soca"|genre="Zouk"
+fset classical=genre="Classic*"
+fset Jazz=genre="Jazz"
+fset flac=filename="*.flac"
+fset last2years=date>=2015
