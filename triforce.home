@@ -8,3 +8,4 @@ sysvenv3:
     yadoma: {}
     flake8: {}
     pomo: {}
+    usiq: {}

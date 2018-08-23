@@ -32,7 +32,11 @@ pomo:
         -
             src: pomorc
             dest: .pomorc
-
+cmus:
+    files:
+        -
+            src: cmusrc
+            dest: .config/cmus/rc
 ptpython:
     files:
         -
@@ -44,6 +48,11 @@ scripts:
         -
             src: scripts/backup.sh
             dest: bin/backup
+usiq:
+    files:
+        -
+            src: usiqrc
+            dest: .config/usiq/usiqrc
 
 mail:
     files:
