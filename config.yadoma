@@ -64,4 +64,4 @@ mail:
             dest: .signature.txt
         -
             src: mail/mailcap
-            desc: .mailcap
+            dest: .mailcap

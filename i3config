@@ -197,6 +197,7 @@ for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_togg
 
 # Make matplotlib floating
 for_window [class="Tk" instance="tk"] floating enable
+for_window [class="Matplotlib" instance="matplotlib"] floating enable
 
 exec synclient TapButton3=2
 
@@ -206,7 +207,7 @@ exec nm-applet
 # exec /home/ingo/.dropbox-dist/dropboxd
 exec google-chrome
 exec xrdb -merge ~/.Xdefaults
-exec xloadimage -onroot -center -fullscreen -border "#111111" .desktop.jpg
+exec qiv -x ~/mosaic.png
 
 
 workspace 1 output HDMI-2

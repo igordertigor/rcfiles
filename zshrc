@@ -3699,3 +3699,6 @@ zrclocal
 # Local variables:
 # mode: sh
 # End:
+
+# added by travis gem
+[ -f /home/ingo/.travis/travis.sh ] && source /home/ingo/.travis/travis.sh
