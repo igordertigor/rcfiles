@@ -2,8 +2,11 @@
 set mbox_type=Maildir
 set folder=$HOME/mail
 set spoolfile=+"yorku/INBOX"
+set mbox=+"yorku/INBOX"
+set record=$HOME/mail/Sent\ Items
 # set sendmail="/usr/bin/msmtp"
 set sendmail="$HOME/bin/xcheck_email_for_attachment.sh"
+set mailcap_path=~/.mailcap
 
 set header_cache=$HOME/mail/hcache
 set index_format="%4C %Z %{%y %b %d} %-15.15L (%4l) %s"
@@ -19,7 +22,8 @@ set use_from=yes
 # Some convenience
 set move=no
 set beep=no
-set print_command="muttprint"
+set print_command="muttprint "
+# set print_command="muttprint - HP-Color-LaserJet-MFP-M477fnw"
 set edit_headers=yes
 
 # Editing
@@ -40,18 +44,32 @@ hdr_order Date: From: To: Cc: Subject: X-Spam-Status:
 # Setting up mailboxes
 mailboxes \
     =yorku/INBOX \
+    =yorku/INBOX/.Collaborations \
+    =yorku/INBOX/.Collaborations/.James\ Elder \
+    =yorku/INBOX/.Collaborations/.Richard\ Murray \
+    =yorku/INBOX/.Collaborations/.Magda\ Wojtowicz \
+    =yorku/INBOX/.Collaborations/.Gunnar\ Schmidtmann \
+    =yorku/INBOX/.Teaching \
+    =yorku/INBOX/.Teaching/.Graduate \
+    =yorku/INBOX/.Teaching/.Neural\ Coding \
+    =yorku/INBOX/.Lab \
+    =yorku/INBOX/.Correspondence \
+    =yorku/INBOX/.Correspondence/.20bn \
+    =yorku/INBOX/.Grants \
+    =yorku/INBOX/.Papers \
+    =yorku/INBOX/.Personal \
     =yorku/INBOX/.Admin \
     =yorku/INBOX/.Admin/.Budgeting \
     =yorku/INBOX/.Admin/.Commitees \
     =yorku/INBOX/.Admin/.CVR \
     =yorku/INBOX/.Admin/.Personal \
-    =yorku/INBOX/.Correspondence \
-    =yorku/INBOX/.Grants \
-    =yorku/INBOX/.Papers \
-    =yorku/INBOX/.Personal \
-    =yorku/INBOX/.Sent\ Items \
-    =yorku/INBOX/.Teaching \
+    =yorku/INBOX/.Admin/.EECS \
+    =yorku/INBOX/.Admin/.PSYC \
+    =yorku/INBOX/.Admin/.Reviewing \
+    =yorku/INBOX/.Admin/.Equipment \
+    =yorku/INBOX/.Conferences \
     =yorku/INBOX/.Random \
+    =yorku/INBOX/.Sent\ Items \
     =ingofruend/INBOX
 
 # Identities
@@ -64,11 +82,10 @@ macro generic,index,pager M "<shell-escape>mbsync -a<return>" "sync mailboxes"
 bind pager i exit
 # bind index <return> display-message
 
-
 set sidebar_width=25
 set sidebar_visible=no
-bind index,pager K sidebar-prev
-bind index,pager J sidebar-next
+bind index,pager <F5> sidebar-prev
+bind index,pager <F6> sidebar-next
 bind index,pager \co sidebar-open
 
 macro index \cv '<enter-command>toggle sidebar_visible<enter><refresh>'
@@ -79,6 +96,8 @@ send-hook "~f ifruend@yorku.ca" set signature="~/.signature.txt"
 send-hook "~f mail@ingofruend.net" set signature=""
 
 save-hook "~t ifruend@yorku.ca" +yorku/INBOX/
+save-hook "~C ifruend@yorku.ca" +yorku/INBOX/
+save-hook "~f .*@yorku.ca" +yorku/INBOX/
 
 # Addresses
 set query_command="abook --mutt-query %s"

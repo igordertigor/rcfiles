@@ -21,7 +21,7 @@ borg create -v --stats \
     --exclude $HOME/.pki \
     --exclude $HOME/.local \
     --exclude '*.pyc' \
-    --exclude '.venv?'
+    --exclude '.venv*'
 
 # Use prune to maintain 7 daily, 4 weekly and 6 monthly archives of THIS machine
 borg prune -v $REPOSITORY --prefix '{hostname}-' \

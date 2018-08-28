@@ -71,3 +71,6 @@ mail:
         -
             src: mail/signature.txt
             dest: .signature.txt
+        -
+            src: mail/mailcap
+            dest: .mailcap

@@ -2,3 +2,5 @@ text/html; google-chrome %s &; test=test -n "$DISPLAY"; needsterminal;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 image/gif; qiv %s
 image/jpeg; qiv %s
+image/png; qiv %s
+image/pdf; zathura %s

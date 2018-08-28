@@ -3,6 +3,7 @@ sysvenv3:
         venv_command: python3 -m venv
         venv_prefix: /home/ingo/.virtualenvs/
         install: true
+    ipython: {}
     ptipython: {}
     yadoma: {}
     flake8: {}

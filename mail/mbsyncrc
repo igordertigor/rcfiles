@@ -14,12 +14,12 @@ Path INBOX
 MaildirStore yorku-local
 Path ~/mail/yorku/
 Inbox ~/mail/yorku/INBOX/
+SubFolders Legacy
 
 Channel yorku
 Master :yorku-remote:
 Slave :yorku-local:
-Patterns "INBOX" "INBOX/Sent Items" "INBOX/Spam" "INBOX/Papers" "INBOX/Personal" "INBOX/Admin/Commitees" "INBOX/Admin/Personal" "INBOX/Admin/Budgeting" "INBOX/Admin/CVR" "INBOX/Grants" "INBOX/Teaching" "INBOX/Correspondence" "INBOX/Random"
-Create Slave
+Create Both
 Expunge Both
 Sync All
 SyncState *
@@ -40,6 +40,7 @@ Path INBOX
 MaildirStore ingofruend-local
 Path ~/mail/ingofruend/
 Inbox ~/mail/ingofruend/INBOX/
+SubFolders Legacy
 
 Channel ingofruend
 Master :ingofruend-remote:

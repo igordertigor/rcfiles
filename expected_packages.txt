@@ -5,3 +5,4 @@ wkhtmltopdf
 zathura
 mutt
 offlineimap
+pdftk
