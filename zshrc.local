@@ -135,7 +135,8 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 export TERM="xterm-256color"
 source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_intelligence time background_jobs)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_intelligence time background_jobs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery time background_jobs)
 
 zsh_python_version () {
     python -c 'import sys; print("py{}.{}".format(sys.version_info[0], sys.version_info[1]))'
