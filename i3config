@@ -199,6 +199,9 @@ for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_togg
 for_window [class="Tk" instance="tk"] floating enable
 for_window [class="Matplotlib" instance="matplotlib"] floating enable
 
+# Same for psychopy (doesn't work though)
+for_window [class="PsychoPy (GLFW)" instance="PsychoPy (GLFW)"] floating enable
+
 exec synclient TapButton3=2
 
 # Things to be started by default

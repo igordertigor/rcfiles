@@ -31,6 +31,7 @@ Host sslmailpool.ispgateway.de
 User "mail@ingofruend.net"
 PassCmd "lpass show --password 6169987141134823544"
 UseIMAPS yes
+PipelineDepth 50
 
 IMAPStore ingofruend-remote
 Account ingofruend

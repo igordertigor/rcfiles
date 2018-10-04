@@ -39,6 +39,8 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-markdown'
 
+Plugin 'ElmCast/elm-vim'
+
 " Latex
 Plugin 'lervag/vimtex'
 
@@ -177,6 +179,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 4
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:elm_syntastic_show_warnings = 1
 
 " Color config """""""""""""""""""""""
 if has('gui_running')

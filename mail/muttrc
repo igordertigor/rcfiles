@@ -3,10 +3,10 @@ set mbox_type=Maildir
 set folder=$HOME/mail
 set spoolfile=+"yorku/INBOX"
 set mbox=+"yorku/INBOX"
-set record=$HOME/mail/Sent\ Items
+set record="$HOME/mail/Sent\ Items"
 # set sendmail="/usr/bin/msmtp"
 set sendmail="$HOME/bin/xcheck_email_for_attachment.sh"
-set mailcap_path=~/.mailcap
+set mailcap_path="~/.mailcap"
 
 set header_cache=$HOME/mail/hcache
 set index_format="%4C %Z %{%y %b %d} %-15.15L (%4l) %s"
@@ -43,7 +43,7 @@ hdr_order Date: From: To: Cc: Subject: X-Spam-Status:
 
 # Setting up mailboxes
 mailboxes \
-    =yorku/INBOX \
+    yorku/INBOX \
     =yorku/INBOX/.Collaborations \
     =yorku/INBOX/.Collaborations/.James\ Elder \
     =yorku/INBOX/.Collaborations/.Richard\ Murray \
