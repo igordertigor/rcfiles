@@ -39,10 +39,10 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-markdown'
 
-Plugin 'ElmCast/elm-vim'
-
 " Latex
 Plugin 'lervag/vimtex'
+
+Plugin 'ElmCast/elm-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -92,6 +92,12 @@ autocmd FileType yaml
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+    \ set expandtab
+
+autocmd FileType elm
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
     \ set expandtab
 
 
