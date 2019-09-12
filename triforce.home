@@ -9,3 +9,4 @@ sysvenv3:
     flake8: {}
     pomo: {}
     usiq: {}
+    startt: {}
