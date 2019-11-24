@@ -190,7 +190,7 @@ bindsym $mod+o exec --no-startup-id /home/ingo/.screenlayout/office.sh
 bindsym $mod+Shift+o exec --no-startup-id /home/ingo/.screenlayout/single.sh
 
 # some default workspaces
-assign [class="google-chrome"] 3
+assign [class="firefox"] 3
 
 # make notifications floating
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
@@ -208,7 +208,7 @@ exec synclient TapButton3=2
 exec nm-applet
 # exec xfce4_power_manager
 # exec /home/ingo/.dropbox-dist/dropboxd
-exec google-chrome
+exec firefox
 exec xrdb -merge ~/.Xdefaults
 exec qiv -x ~/mosaic.png
 
