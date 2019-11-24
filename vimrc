@@ -44,6 +44,9 @@ Plugin 'lervag/vimtex'
 
 Plugin 'ElmCast/elm-vim'
 
+" Plugin 'tpope/vim-surround'  " Doesn't work as advertised
+Plugin 'alvan/vim-closetag'
+
 call vundle#end()
 filetype plugin indent on
 
