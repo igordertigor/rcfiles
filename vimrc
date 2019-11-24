@@ -18,6 +18,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'alfredodeza/coveragepy.vim'
+Plugin 'crisbra/csv.vim'
 
 " Color
 Plugin 'jnurmine/Zenburn'
@@ -119,6 +120,7 @@ autocmd FileType md,mkd,markdown
     \ | setlocal spell
     \ | setlocal wrap
     \ | setlocal expandtab
+    \ | setlocal textwidth=0
 let g:pencil#autoformat = 0
 
 set number
@@ -158,6 +160,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Deal with markes in template files
+map c /<++>v3lxi
+
+
+
 " NERDTree config """""""""""""""""""""
 map <tab> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.pyc$', '\~$']
@@ -172,9 +179,6 @@ map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Powerline """""""""""""""""""""""""""
 set laststatus=2
 let g:Powerline_symbols='fancy'
-
-" Goyo """"""""""""""""""""""""""""""""
-map m :Goyo<CR>
 
 " syntastic config """"""""""""""""""""
 set statusline+=%#warningmsg#
@@ -207,3 +211,9 @@ let &rtp = '~/.vim/bundle/vimtex,' . &rtp
 let &rtp .= ',~/.vim/bundle/vimtex/after'
 let g:tex_flavor = 'pdflatex'
 let g:vimtex_view_method = 'zathura'
+" regexes for ignoring log entries
+let g:vimtex_log_ignore = []
+
+" Sensation and perception specific: Enter images
+map <leader>b :set paste<cr><esc>i<div class="imgbox<++>"><cr><img<cr>src="figures/SensPerc5e Ch01 Figures (JPEG)/SENSPERC5e-Fig-<++>-0.jpg"<cr>class="<++>"/><cr></div><esc>5k:set nopaste<cr>
+map <leader>p :set paste<cr><esc>i<div class="imgbox<++>"><cr><img<cr>src="figures/chapter01/<++>.jpg"<cr>class="<++>"/><cr></div><esc>5k:set nopaste<cr>

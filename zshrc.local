@@ -22,7 +22,19 @@ gic () {
     RBUFFER="\""
 }
 zle -N gic gic
-bindkey "git c" gic
+bindkey "git co" gic
+
+gco () {
+    LBUFFER="git checkout "
+}
+zle -N gco gco
+bindkey "git ch" gco
+
+git_push_up () {
+    LBUFFER="git push --set-upstream origin $(git branch | grep \* | cut -d ' ' -f2)"
+}
+zle -N git_push_up git_push_up
+bindkey "push up" git_push_up
 
 gis () {
     LBUFFER="git status"
@@ -96,6 +108,9 @@ function mkvenv3(){
     if check_build_py ; then
         pip install -U --pre pip pybuilder
         pyb install_dependencies
+    fi
+    if [ -e requirements.txt ] ; then
+        pip install -r requirements.txt
     fi
 }
 
@@ -184,3 +199,6 @@ gks () {
     echo "Using device $DEVICE"
     pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
+
+export P2220=$HOME/write/teaching/F2019-2220-sensation-and-perception/
+export P3010=$HOME/write/teaching/F2019-3010-intermediate-research-methods/

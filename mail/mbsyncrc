@@ -26,28 +26,28 @@ SyncState *
 
 # INGOFRUEND
 
-IMAPAccount ingofruend
-Host sslmailpool.ispgateway.de
-User "mail@ingofruend.net"
-PassCmd "lpass show --password 6169987141134823544"
-UseIMAPS yes
-PipelineDepth 50
-
-IMAPStore ingofruend-remote
-Account ingofruend
-UseNameSpace yes
-Path INBOX
-
-MaildirStore ingofruend-local
-Path ~/mail/ingofruend/
-Inbox ~/mail/ingofruend/INBOX/
-SubFolders Legacy
-
-Channel ingofruend
-Master :ingofruend-remote:
-Slave :ingofruend-local:
-Patterns "INBOX" "INBOX/Sent" "INBOX/SPAM"
-Create Slave
-Expunge Both
-Sync All
-SyncState *
+# IMAPAccount ingofruend
+# Host sslmailpool.ispgateway.de
+# User "mail@ingofruend.net"
+# PassCmd "lpass show --password 6169987141134823544"
+# UseIMAPS yes
+# PipelineDepth 50
+# 
+# IMAPStore ingofruend-remote
+# Account ingofruend
+# UseNameSpace yes
+# Path INBOX
+# 
+# MaildirStore ingofruend-local
+# Path ~/mail/ingofruend/
+# Inbox ~/mail/ingofruend/INBOX/
+# SubFolders Legacy
+# 
+# Channel ingofruend
+# Master :ingofruend-remote:
+# Slave :ingofruend-local:
+# Patterns "INBOX" "INBOX/Sent" "INBOX/SPAM"
+# Create Slave
+# Expunge Both
+# Sync All
+# SyncState *
