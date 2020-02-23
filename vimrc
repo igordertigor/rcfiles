@@ -16,9 +16,8 @@ Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
-" Plugin 'scrooloose/nerdtree'
-Plugin 'alfredodeza/coveragepy.vim'
-Plugin 'crisbra/csv.vim'
+" Plugin 'alfredodeza/coveragepy.vim'
+" Plugin 'crisbra/csv.vim'
 
 " Color
 Plugin 'jnurmine/Zenburn'
