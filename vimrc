@@ -164,6 +164,7 @@ map c /<++>v3lxi
 
 
 " netrw config """""""""""""""""""""
+let g:netrw_liststyle=3
 let g:NetrwIsOpen=0
 function! ToggleNetrw()
     if g:NetrwIsOpen
