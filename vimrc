@@ -104,7 +104,6 @@ autocmd FileType elm
     \ set shiftwidth=4 |
     \ set expandtab
 
-
 autocmd FileType make set noexpandtab
 autocmd FileType C    set noexpandtab
 autocmd FileType cpp  set noexpandtab
