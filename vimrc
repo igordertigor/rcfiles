@@ -16,7 +16,7 @@ Plugin 'vim-scripts/indentpython.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'alfredodeza/coveragepy.vim'
 Plugin 'crisbra/csv.vim'
 
@@ -164,9 +164,25 @@ map c /<++>v3lxi
 
 
 
-" NERDTree config """""""""""""""""""""
-map <tab> :NERDTreeToggle<cr>
-let NERDTreeIgnore=['\.pyc$', '\~$']
+" netrw config """""""""""""""""""""
+let g:NetrwIsOpen=0
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filename") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+" hit tab twice!
+noremap <silent> <tab> :call ToggleNetrw()<cr>
 
 " SimpylFold """"""""""""""""""""""""""
 let g:SimpylFold_docstring_preview=1
