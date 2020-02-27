@@ -29,14 +29,8 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " git
 Plugin 'tpope/vim-fugitive'
 
-" Snippets? These seem to be quite cool, but don't work
-" Plugin 'Shuogo/neocomplete'
-" Plugin 'Shuogo/neosnippet'
-" Plugin 'Shuogo/neosnippet-snippets'
-
 " Center text
 Plugin 'junegunn/goyo.vim'
-Plugin 'reedes/vim-pencil'
 Plugin 'tpope/vim-markdown'
 
 " Latex
@@ -46,6 +40,8 @@ Plugin 'ElmCast/elm-vim'
 
 " Plugin 'tpope/vim-surround'  " Doesn't work as advertised
 Plugin 'alvan/vim-closetag'
+
+Plugin 'jeetsukumaran/vim-pythonsense'
 
 call vundle#end()
 filetype plugin indent on
@@ -109,7 +105,6 @@ autocmd FileType cpp  set noexpandtab
 autocmd FileType rst set wrap linebreak nolist formatoptions+=l
 autocmd FileType tex set wrap linebreak nolist formatoptions+=l
 autocmd FileType md,mkd,markdown
-    \ | call pencil#init()
     \ | setlocal autoindent
     \ | setlocal colorcolumn=0
     \ | setlocal linebreak
@@ -119,7 +114,6 @@ autocmd FileType md,mkd,markdown
     \ | setlocal wrap
     \ | setlocal expandtab
     \ | setlocal textwidth=0
-let g:pencil#autoformat = 0
 
 set number
 let mapleader=" "
