@@ -153,7 +153,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Deal with markes in template files
-map c /<++>v3lxi
+map <C-c> /<++>v3lxi
 
 
 
