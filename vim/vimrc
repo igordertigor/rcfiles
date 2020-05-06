@@ -49,7 +49,6 @@ autocmd FileType python
     \ | set autoindent
     \ | set fileformat=unix
     \ | set colorcolumn=80
-    \ | source $HOME/.vim/SimpylFold
     \ | packadd vim-pythonsense            " Python text objects
     \ | packadd indentpython               " Proper python indentation
 
