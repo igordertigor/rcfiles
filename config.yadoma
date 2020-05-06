@@ -52,20 +52,11 @@ usiq:
 mail:
     files:
         -
-            src: mail/mbsyncrc
+            src: mbsyncrc
             dest: .mbsyncrc
         -
-            src: mail/muttrc
-            dest: .muttrc
+            src: .mutt
+            dest: .mutt
         -
-            src: mail/mutt-zenburn-colors
-            dest: .mutt_colors_zenburn
-        - 
-            src: mail/msmtprc
-            dest: .msmtprc
-        -
-            src: mail/signature.txt
-            dest: .signature.txt
-        -
-            src: mail/mailcap
+            src: mailcap
             dest: .mailcap
