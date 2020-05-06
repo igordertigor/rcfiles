@@ -9,8 +9,8 @@ zsh:
 vim:
     files:
         -
-            src: vimrc
-            dest: .vimrc
+            src: vim
+            dest: .vim
 i3:
     files:
         -
