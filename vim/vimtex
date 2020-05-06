@@ -1,0 +1,18 @@
+let g:tex_flavor = 'pdflatex'
+let g:vimtex_view_method = 'zathura'
+
+" regexes for ignoring log entries
+let g:vimtex_log_ignore = []
+
+
+" vimtex is not loaded by default (a bug in vim apparently).
+" More information here: https://github.com/lervag/vimtex/issues/1413
+
+if exists("b:did_user_ftplugin") | finish | endif
+let b:did_user_ftplugin = 1
+" If it's in opt/
+packadd! vimtex
+if !get(g:, 'vimtex_enabled')
+  call vimtex#init()
+  let g:vimtex_enabled=1
+endif

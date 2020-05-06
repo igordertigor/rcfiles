@@ -1,0 +1,119 @@
+syntax enable
+colorscheme zenburn
+
+" Using airline as statusline (also contains colors of status line)
+" source $HOME/.vim/airline
+source $HOME/.vim/lightline
+
+
+set nocompatible                         " vim not vi (should technically be set automatically)
+set encoding=utf-8
+filetype plugin indent on
+
+" Appearance
+set number                                          " show line numbers
+set listchars=tab:>-,trail:~,extends:>,precedes:<   " Chars to highlight whitespace
+set list                                            " Use those chars
+
+" Splits
+set splitbelow            " New splits added below
+set splitright            " New splits added right
+" Simplify split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Syntastic syntax checking
+source $HOME/.vim/syntastic
+
+" map f3 and f4 to cumulatively toggle spellchecking in english and german
+source $HOME/.vim/valentin.vim
+set spelllang=
+map <f3> :call SetSpelllang("en_ca")<cr>
+map <f4> :call SetSpelllang("de")<cr>
+
+" fix stuff after bad paste
+map <f7> <ESC>u: set paste<CR>.:set nopaste<CR>gi
+
+
+source $HOME/.vim/ctrlp
+
+
+" Filetypes
+"    Python
+autocmd FileType python
+    \   set expandtab
+    \ | set tabstop=4
+    \ | set shiftwidth=4
+    \ | set autoindent
+    \ | set fileformat=unix
+    \ | set colorcolumn=80
+    \ | source $HOME/.vim/SimpylFold
+    \ | packadd vim-pythonsense            " Python text objects
+    \ | packadd indentpython               " Proper python indentation
+
+"    Web tech
+autocmd FileType html
+    \   set tabstop=2
+    \ | set softtabstop=2
+    \ | set shiftwidth=2
+    \ | set expandtab
+    \ | source $HOME/.vim/vim-closetag
+autocmd FileType javascript
+    \   set tabstop=2
+    \ | set softtabstop=2
+    \ | set shiftwidth=2
+    \ | set expandtab
+autocmd FileType css
+    \   set tabstop=2
+    \ | set softtabstop=2
+    \ | set shiftwidth=2
+    \ | set expandtab
+
+autocmd FileType scss
+    \   set tabstop=2
+    \ | set softtabstop=2
+    \ | set shiftwidth=2
+    \ | set expandtab
+
+autocmd FileType yaml
+    \   set tabstop=2
+    \ | set softtabstop=2
+    \ | set shiftwidth=2
+    \ | set expandtab
+autocmd FileType json
+    \   set expandtab
+    \ | set tabstop=2
+    \ | set shiftwidth=2
+
+autocmd FileType elm
+    \   set tabstop=4
+    \ | set softtabstop=4
+    \ | set shiftwidth=4
+    \ | set expandtab
+
+autocmd FileType make set noexpandtab
+autocmd FileType C,cpp
+    \   set noexpandtab
+    \ | set tabstop=4
+    \ | packadd a.vim    " :A to switch between source and header
+
+
+" Normal text
+autocmd FileType rst set wrap linebreak nolist formatoptions+=l
+autocmd FileType tex
+            \ set wrap linebreak nolist formatoptions+=l |
+            \ packadd vimtex |
+            \ source $HOME/.vim/vimtex
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+autocmd FileType md,mkd,markdown
+    \   setlocal autoindent
+    \ | setlocal colorcolumn=0
+    \ | setlocal linebreak
+    \ | setlocal shiftwidth=4
+    \ | setlocal tabstop=4
+    \ | setlocal spell
+    \ | setlocal wrap
+    \ | setlocal expandtab
+    \ | setlocal textwidth=0

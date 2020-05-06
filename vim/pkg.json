@@ -1,0 +1,20 @@
+{
+  "general": {
+    "name": "ingo",
+    "repo_path": "~/.vim/repos",
+    "notes": "youcompleteme is installed using vam install youcompleteme. Use vam remove youcompleteme to delete (100ms)"
+  },
+  "github": [
+    {"name": "vim-scripts/a.vim", "start": false, "comment": "Jump from c++ to h file with :A"},
+    {"name": "ctrlpvim/ctrlp.vim", "start": true, "comment": "ctrl-p -> fuzzy search", "time": 10},
+    {"name": "ElmCast/elm-vim", "start": true, "comment": "the whole elm business", "time": 10},
+    {"name": "vim-syntastic/syntastic", "start": true, "comment": "power syntax checking", "time": 20},
+    {"name": "wellle/targets.vim", "start": true, "comment": "very versatile text objects", "time": 0},
+    {"name": "itchyny/lightline.vim", "start": true, "comment": "light status line", "time": 10},
+    {"name": "tpope/vim-fugitive", "start": true, "comment": "git support (mostly for status line)", "time": 25},
+    {"name": "alvan/vim-closetag", "start": true, "comment": "close html tags (needs to be started, is aware of filetypes)"},
+    {"name": "jeetsukumaran/vim-pythonsense", "start": false, "comment": "text objects for python"},
+    {"name": "lervag/vimtex", "start": false, "comment": "vim bindings and text objects"},
+    {"name": "vim-scripts/indentpython.vim", "start": false, "comment": "proper indent for python"}
+  ]
+}
