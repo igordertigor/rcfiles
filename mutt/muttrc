@@ -1,0 +1,125 @@
+# General information
+set mbox_type=Maildir
+set folder=$HOME/.Mail
+
+set spoolfile=+"ingofruend/INBOX"
+set header_cache=$HOME/.Mail/.hcache
+set index_format="%4C %Z %{%y %b %d} %-15.15L (%4l) %s"
+
+source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+
+# Account settings
+set realname="Ingo Fründ"
+set from=mail@ingofruend.net
+# set sendmail="/usr/bin/msmtp"
+set envelope_from=yes
+set use_from=yes
+
+# Some convenience
+set move=no
+set beep=no
+set print_command="muttprint"
+set edit_headers=yes
+set text_flowed=yes
+
+# Editing
+set editor="vim -c 'setlocal fo+=aw' +/^$"
+set send_charset="iso-8859-1:utf-8"
+set askcc=yes
+
+# Viewing
+set sort=threads
+set sort_aux=reverse-last-date-received
+set pager_index_lines=6
+
+# Headers
+ignore *
+unignore date from to cc subject resent-from reply-to x-mailer x-spam-status
+hdr_order  Date: From: To: Cc: Subject: X-Spam-Status:
+
+# GPG
+set pgp_sort_keys=trust
+unset pgp_show_unusable
+set pgp_autosign=no
+set pgp_sign_as=3614f9d9
+set pgp_replyencrypt=yes
+set pgp_timeout=1800
+set pgp_auto_decode= yes
+
+# Setting up mailboxes
+mailboxes        \
+    +gmail/INBOX \
+    +gmail/xwax \
+    +gmail/StuSti \
+    +ingostarr/INBOX \
+    +ingofruend/INBOX \
+    +archive/2013 \
+    +archive/2014 \
+    +archive/2015 \
+    +archive/2016 \
+    +archive/2017 \
+    +archive/2018 \
+    +archive/2019 \
+    +archive/2020
+
+######################## Identities ############################
+# Changing identity
+macro generic "<F2>" ":set from=ingo.fruend@googlemail.com"
+macro generic "<F3>" ":set from=dj@ingostarr.de"
+macro generic "<F4>" ":set from=mail@ingofruend.net"
+
+# Set things depending on current mailbox
+folder-hook "gmail/*" set from=ingo.fruend@googlemail.com
+folder-hook "ingofruend/*" set from=mail@ingofruend.net
+folder-hook "ingostarr/*" set from=dj@ingostarr.de
+
+folder-hook "gmail/*"      'set realname="Ingo Fründ"'
+folder-hook "ingofruend/*" 'set realname="Ingo Fründ"'
+folder-hook "ingostarr/*"  'set realname="Ingo Starr"'
+
+# Send copies to myself
+folder-hook "gmail/*"      my_hdr Bcc: ingo.fruend@googlemail.com
+folder-hook "ingofruend/*" my_hdr Bcc: mail@ingofruend.net
+folder-hook "ingostarr/*"  my_hdr Bcc: dj@ingostarr.de
+
+# Mark those copies as read
+folder-hook "gmail/*" 'push "<tag-prefix-cond><tag-message><end-cond><tag-pattern>~f ingo.fruend@googlemail.com<enter><tag-prefix-cond><clear-flag>N<tag-prefix-cond><tag-message>"'
+folder-hook "ingofruend/*" 'push "<tag-prefix-cond><tag-message><end-cond><tag-pattern>~f mail@ingofruend.net<enter><tag-prefix-cond><clear-flag>N<tag-prefix-cond><tag-message>"'
+folder-hook "ingostarr/*" 'push "<tag-prefix-cond><tag-message><end-cond><tag-pattern>~f dj@ingostarr.de<enter><tag-prefix-cond><clear-flag>N<tag-prefix-cond><tag-message>"'
+
+
+set sendmail='/home/ingo/bin/xcheck_email_for_attachment.sh'
+
+# Set signature depending on sender
+set signature="~/.mail/signatures/signature.py|"
+send-hook "~f ingo.fruend@googlemail.com" set signature="~/.mutt/signatures/signature.py|"
+send-hook "~f ingo.fruend@googlemail.com" set sig_dashes
+send-hook "~f dj@ingostarr.de" set sig_dashes
+send-hook "~f dj@ingostarr.de" set signature="~/.mutt/signatures/signature.py|"
+send-hook "~f mail@ingofruend.net" set sig_dashes
+send-hook "~f mail@ingofruend.net" set signature="~/.mutt/signatures/signature.txt"
+
+#################### Saving messages ###########################
+
+# Default save hooks
+# gmail
+save-hook "~f stipendiaten"                 +gmail/StuSti
+save-hook "~s xwax-devel"                   +gmail/xwax
+
+###################### Addresses ################################
+
+# Addresses
+set query_command = "abook --mutt-query %s"
+macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+macro index,pager \cb "<pipe-message>/home/ingo/bin/viewurl<return>" "my own url viewer"
+
+################## Shortcuts ####################################
+
+macro index Y "l ~F\n"   "limit view to tagged messages"
+macro index \cy "lall\n" "view all messages"
+macro generic,index,pager M "<shell-escape>mbsync -a<return>" "sync mailboxes"
+
+auto_view text/html
+
+source ~/.mutt/filtering
