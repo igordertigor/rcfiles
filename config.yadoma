@@ -1,77 +1,75 @@
 zsh:
-    files:
-        -
-            src: zshrc
-            dest: .zshrc
-        -
-            src: zshrc.local
-            dest: .zshrc.local
+  files:
+    -
+      src: zshrc
+      dest: .zshrc
+    -
+      src: zshrc.local
+      dest: .zshrc.local
 vim:
-    files:
-        -
-            src: vim
-            dest: .vim
+  files:
+    -
+      src: vim
+      dest: .vim
 i3:
-    files:
-        -
-            src: i3config
-            dest: .config/i3/config
-        -
-            src: i3status
-            dest: .config/i3/status
-        -
-            src: i3status.sh
-            dest: bin/i3status.sh
+  files:
+    -
+      src: i3config
+      dest: .config/i3/config
+    -
+      src: i3status
+      dest: .config/i3/status
+    -
+      src: i3status.sh
+      dest: bin/i3status.sh
 bash:
-    files:
-        -
-            src: bashrc
-            dest: .bashrc
+  files:
+    -
+      src: bashrc
+      dest: .bashrc
 pomo:
-    files:
-        -
-            src: pomorc
-            dest: .pomorc
+  files:
+    -
+      src: pomorc
+      dest: .pomorc
 cmus:
-    files:
-        -
-            src: cmusrc
-            dest: .config/cmus/rc
-
+  files:
+    -
+      src: cmusrc
+      dest: .config/cmus/rc
 scripts:
-    files:
-        -
-            src: scripts/backup.sh
-            dest: bin/backup
-        -
-            src: scripts/scan2pdf
-            dest: bin/scan2pdf
-        -
-            src: scripts/toggle_mute.sh
-            dest: bin/toggle_mute.sh
-        -
-            src: scripts/toggle_keyboard.sh
-            dest: bin/toggle_keyboard.sh
-        -
-            src: scripts/viewurl.py
-            dest: bin/viewurl.py
-        -
-            src: scripts/xcheck_email_for_attachment.sh
-            dest: bin/xcheck_email_for_attachment.sh
+  files:
+    -
+      src: scripts/backup.sh
+      dest: bin/backup
+    -
+      src: scripts/scan2pdf
+      dest: bin/scan2pdf
+    -
+      src: scripts/toggle_mute.sh
+      dest: bin/toggle_mute.sh
+    -
+      src: scripts/toggle_keyboard.sh
+      dest: bin/toggle_keyboard.sh
+    -
+      src: scripts/viewurl.py
+      dest: bin/viewurl.py
+    -
+      src: scripts/xcheck_email_for_attachment.sh
+      dest: bin/xcheck_email_for_attachment.sh
 usiq:
-    files:
-        -
-            src: usiqrc
-            dest: .config/usiq/usiqrc
-
+  files:
+    -
+      src: usiqrc
+      dest: .config/usiq/usiqrc
 mail:
-    files:
-        -
-            src: mbsyncrc
-            dest: .mbsyncrc
-        -
-            src: .mutt
-            dest: .mutt
-        -
-            src: mailcap
-            dest: .mailcap
+  files:
+    -
+      src: mbsyncrc
+      dest: .mbsyncrc
+    -
+      src: .mutt
+      dest: .mutt
+    -
+      src: mailcap
+      dest: .mailcap
