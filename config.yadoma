@@ -40,7 +40,7 @@ cmus:
 scripts:
   files:
     -
-      src: scripts/backup.sh
+      src: scripts/backup
       dest: bin/backup
     -
       src: scripts/scan2pdf

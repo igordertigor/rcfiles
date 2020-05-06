@@ -2,9 +2,8 @@
 
 REPOSITORY=/media/backup-disk/borg
 
-pmount /dev/sda1/ backup-disk
+pmount /dev/sdb1/ backup-disk
 
-# Backup all of /home except a few excluded directories
 borg create -v --stats \
     $REPOSITORY::'{hostname}--{now:%Y-%m-%d}' \
     $HOME \
@@ -13,21 +12,24 @@ borg create -v --stats \
     --exclude $HOME/.fonts \
     --exclude $HOME/.gconf \
     --exclude $HOME/.gnome \
-    --exclude $HOME/.ssh \
+    --exclude $HOME/.vimrc \
     --exclude $HOME/.cache \
-    --exclude $HOME/.ICEauthority \
-    --exclude $HOME/.dbus \
-    --exclude $HOME/.gnupg \
-    --exclude $HOME/.pki \
+    --exclude $HOME/.config \
+    --exclude $HOME/.gftp \
+    --exclude $HOME/.log \
+    --exclude $HOME/.links2 \
     --exclude $HOME/.local \
+    --exclude $HOME/.gnupg \
+    --exclude $HOME/.virtualenvs \
+    --exclude $HOME/.mutt_colors_zenburn \
     --exclude '*.pyc' \
-    --exclude '.venv*'
+    --exclude '.venv*' \
+    --exclude '__pycache__'
 
-# Use prune to maintain 7 daily, 4 weekly and 6 monthly archives of THIS machine
-borg prune -v $REPOSITORY --prefix '{hostname}-' \
+borg prune -v $REPOSITORY --prefix '{hostname}--' \
     --keep-daily=7 \
     --keep-weekly=4 \
     --keep-monthly=6 \
-    --keep-yearly=3
+    --keep-yearly=5
 
 pumount /media/backup-disk
