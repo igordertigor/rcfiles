@@ -1,5 +1,5 @@
 syntax enable
-colorscheme zenburn
+colorscheme wombat
 
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
