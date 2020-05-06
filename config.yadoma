@@ -37,11 +37,6 @@ cmus:
         -
             src: cmusrc
             dest: .config/cmus/rc
-ptpython:
-    files:
-        -
-            src: ptpython.py
-            dest: .ptpython/config.py
 
 scripts:
     files:
