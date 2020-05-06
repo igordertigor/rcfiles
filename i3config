@@ -210,7 +210,8 @@ exec nm-applet
 # exec /home/ingo/.dropbox-dist/dropboxd
 exec firefox
 exec xrdb -merge ~/.Xdefaults
-exec qiv -x ~/mosaic.png
+exec setxkbmap us
+exec qiv -xtf ~/Pictures/background.jpg
 
 
 workspace 1 output HDMI-2
