@@ -1,0 +1,90 @@
+# INGOSTARR
+
+IMAPAccount ingostarr
+Host sslmailpool.ispgateway.de
+User "dj@ingostarr.de"
+PassCmd "lpass show --password 8304614536637027493"
+SSLType IMAPS
+
+IMAPStore ingostarr-remote
+Account ingostarr
+UseNamespace yes
+Path INBOX
+
+MaildirStore ingostarr-local
+Path ~/.Mail/ingostarr/
+Inbox ~/.Mail/ingostarr/INBOX
+SubFolders Legacy
+
+Channel ingostarr
+Master :ingostarr-remote:
+Slave :ingostarr-local:
+Patterns "INBOX" "INBOX/Sent" "INBOX/SPAM"
+Create Slave
+Expunge Both
+Sync All
+SyncState *
+
+# INGOFRUEND
+
+IMAPAccount ingofruend
+Host sslmailpool.ispgateway.de
+User "mail@ingofruend.net"
+PassCmd "lpass show --password 6169987141134823544"
+SSLType IMAPS
+
+IMAPStore ingofruend-remote
+Account ingofruend
+UseNamespace yes
+Path INBOX
+
+MaildirStore ingofruend-local
+Path ~/.Mail/ingofruend/
+Inbox ~/.Mail/ingofruend/INBOX
+SubFolders Legacy
+
+Channel ingofruend
+Master :ingofruend-remote:
+Slave :ingofruend-local:
+Patterns "INBOX" "INBOX/Sent" "INBOX/SPAM"
+Create Slave
+Expunge Both
+Sync All
+SyncState *
+
+# GMAIL
+
+IMAPAccount gmail
+Host imap.gmail.com
+User "ingo.fruend@googlemail.com"
+PassCmd "lpass show --password 3709079601136425669"
+SSLType IMAPS
+
+IMAPStore gmail-remote
+Account gmail
+UseNamespace yes
+
+MaildirStore gmail-local
+Path ~/.Mail/gmail/
+Inbox ~/.Mail/gmail/INBOX
+SubFolders Legacy
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX" "xwax" "StuSti"
+Create Slave
+Expunge Both
+Sync All
+SyncState *
+
+# GROUPS
+
+Group df
+Channels ingostarr ingofruend
+
+Group private
+Channels ingostarr gmail
+
+Group all
+Channels ingostarr ingofruend gmail

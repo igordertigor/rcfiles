@@ -1,0 +1,5 @@
+image/gif; qiv %s
+image/jpeg; qiv %s
+image/png; qiv %s
+image/pdf; zathura %s
+application/pdf; zathura %s
