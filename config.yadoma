@@ -53,7 +53,7 @@ scripts:
       dest: bin/toggle_keyboard.sh
     -
       src: scripts/viewurl.py
-      dest: bin/viewurl.py
+      dest: bin/viewurl
     -
       src: scripts/xcheck_email_for_attachment.sh
       dest: bin/xcheck_email_for_attachment.sh
