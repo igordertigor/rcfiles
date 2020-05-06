@@ -43,6 +43,21 @@ scripts:
         -
             src: scripts/backup.sh
             dest: bin/backup
+        -
+            src: scripts/scan2pdf
+            dest: bin/scan2pdf
+        -
+            src: scripts/toggle_mute.sh
+            dest: bin/toggle_mute.sh
+        -
+            src: scripts/toggle_keyboard.sh
+            dest: bin/toggle_keyboard.sh
+        -
+            src: scripts/viewurl.py
+            dest: bin/viewurl.py
+        -
+            src: scripts/xcheck_email_for_attachment.sh
+            dest: bin/xcheck_email_for_attachment.sh
 usiq:
     files:
         -
