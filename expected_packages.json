@@ -1,0 +1,73 @@
+{
+"basic": [
+  "synclient",
+  "i3",
+  "google-chrome-stable",
+  "arandr",
+  "zathura",
+  "vim",
+  "vim-youcompleteme",
+  "python3-venv",
+  "zsh",
+  "powerline",
+  "curl",
+  "xclip",
+  "qiv",
+  "gthumb",
+  "inkscape",
+  "gimp",
+  "pdftk",
+  "pandoc"
+],
+"coding": [
+  "cxxtest",
+  "python3-dev",
+  "git",
+  "gitk",
+  "tig",
+  "g++",
+  "sbt",
+  "scala",
+  "fzf",
+  "exuberant-ctags",
+  "silversearcher-ag"
+],
+"mail": [
+  "mutt",
+  "isync"
+],
+"music": [
+  "qjackctl",
+  "lame",
+  "id3v2",
+  "flac"
+],
+"dependencies": {
+  "sbt": "wget http://apt.typesafe.com/repo-deb-build-0002.deb\nsudo dpkg -i repo-deb-build-0002.deb\necho \"deb https://dl.bintray.com/sbt/debian /\" | sudo tee -a /etc/apt/sources.list.d/sbt.list\ncurl -sL \"https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823\" | sudo apt-key add",
+  "google-chrome-stable": "wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -\necho 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list"
+},
+"cmus-build": [
+  "libncurses5-dev",
+  "libpulse-dev",
+  "libasound2-dev",
+  "libroar-dev",
+  "libao-dev",
+  "libjack-dev",
+  "libsamplerate0-dev",
+  "libcdio-dev",
+  "libcdio-cdda-dev",
+  "libcddb2-dev",
+  "libcue-dev",
+  "libflac-dev",
+  "libvorbis-dev",
+  "libmpcdec-dev",
+  "libwavpack-dev",
+  "libmad0-dev",
+  "libavformat-dev",
+  "libavcodec-dev",
+  "libfaad-dev",
+  "libmp4v2-dev",
+  "libmodplug-dev",
+  "libmikmod2-dev"
+]
+}
