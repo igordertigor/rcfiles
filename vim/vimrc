@@ -77,7 +77,7 @@ autocmd FileType scss
     \ | set shiftwidth=2
     \ | set expandtab
 
-autocmd FileType yaml
+autocmd FileType yaml,yml
     \   set tabstop=2
     \ | set softtabstop=2
     \ | set shiftwidth=2
