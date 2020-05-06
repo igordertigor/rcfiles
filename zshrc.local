@@ -199,6 +199,3 @@ gks () {
     echo "Using device $DEVICE"
     pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
-
-export P2220=$HOME/write/teaching/F2019-2220-sensation-and-perception/
-export P3010=$HOME/write/teaching/F2019-3010-intermediate-research-methods/
