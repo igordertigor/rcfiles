@@ -1,5 +1,5 @@
 syntax enable
-colorscheme wombat
+colorscheme solarized
 
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
