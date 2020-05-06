@@ -15,6 +15,7 @@
     {"name": "alvan/vim-closetag", "start": true, "comment": "close html tags (needs to be started, is aware of filetypes)"},
     {"name": "jeetsukumaran/vim-pythonsense", "start": false, "comment": "text objects for python"},
     {"name": "lervag/vimtex", "start": false, "comment": "vim bindings and text objects"},
-    {"name": "vim-scripts/indentpython.vim", "start": false, "comment": "proper indent for python"}
+    {"name": "vim-scripts/indentpython.vim", "start": false, "comment": "proper indent for python"},
+    {"name": "mileszs/ack.vim", "start": true, "comment": "ag silver searcher"}
   ]
 }

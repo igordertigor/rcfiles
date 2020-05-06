@@ -38,6 +38,7 @@ map <f7> <ESC>u: set paste<CR>.:set nopaste<CR>gi
 
 
 source $HOME/.vim/ctrlp
+source $HOME/.vim/ack
 
 
 " Filetypes
