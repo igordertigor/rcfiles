@@ -68,7 +68,7 @@ mail:
       src: mbsyncrc
       dest: .mbsyncrc
     -
-      src: .mutt
+      src: mutt
       dest: .mutt
     -
       src: mailcap
