@@ -1,0 +1,17 @@
+#!/bin/bash
+
+TMPDIR=$(mktemp -d)
+i=0
+for file in "$@";
+do
+    echo $file
+    i=$(($i+1));
+    f=$(printf "%02d" $i)
+    convert -units PixelsPerInch $file -resample 300 $TMPDIR/$f.jpg
+    convert $TMPDIR/$f.jpg $TMPDIR/$f.pdf
+done
+
+cd $TMPDIR
+pdftk *.pdf cat output scan.pdf
+cd -
+mv $TMPDIR/scan.pdf .
