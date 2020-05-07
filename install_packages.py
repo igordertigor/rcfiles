@@ -57,6 +57,9 @@ if __name__ == '__main__':
 
     if len(topics) == 1 and topics[0] == 'all':
         topics = pkg.all_topics
+    elif len(topics) == 0:
+        print("No topics chosen. Available topics are:\n  {}"
+              .format(pkg.all_topics))
 
     for topic in topics:
         pkg.prepare_for_installation(topic)
