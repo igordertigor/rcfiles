@@ -134,9 +134,6 @@ gc () {
 zle -N gc gc
 bindkey '^gc' gc
 
-# Add Heroku toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # Add node
 export NVM_DIR="/home/ingo/.nvm"
 function load_nvm (){
@@ -145,49 +142,8 @@ function load_nvm (){
 
 
 #### Configure prompt
-POWERLEVEL9K_MODE='awesome-fontconfig'
-# POWERLEVEL9K_MODE='nerdfont-complete'
-export TERM="xterm-256color"
-source "$HOME/code/powerlevel9k/powerlevel9k.zsh-theme"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_intelligence time background_jobs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status battery time background_jobs)
-
-zsh_python_version () {
-    python -c 'import sys; print("py{}.{}".format(sys.version_info[0], sys.version_info[1]))'
-}
-
-zsh_intelligence () {
-    DICER=$(find_dicer)
-    if [[ ! -z $DICER ]]; then
-        echo D$DICER;
-    elif [[ -n $VIRTUAL_ENV ]]; then
-        zsh_python_version;
-    else
-        echo "~"
-    fi
-}
-
-POWERLEVEL9K_CUSTOM_INTELLIGENCE='zsh_intelligence'
-
-POWERLEVEL9K_DIR_HOME_BACKGROUND='09'
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='09'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='009'
-POWERLEVEL9K_DIR_HOME_FOREGROUND='236'
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='236'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='236'
-
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND='236'
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND='119'
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='236'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='214'
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='236'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='196'
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='236'
-
-if [ $(hostname) = "riemann" ]; then
-    export BUP_DIR=/media/backup/riemann-backup/
-fi
+# source .powerlevel9k.zsh
+source .powerlevel10k.zsh
 
 gks () {
     echo "Applying function: git key sync $1";

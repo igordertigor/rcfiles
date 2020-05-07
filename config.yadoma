@@ -6,6 +6,12 @@ zsh:
     -
       src: zshrc.local
       dest: .zshrc.local
+    -
+      src: powerlevel9k.zsh
+      dest: .powerlevel9k.zsh
+    -
+      src: powerlevel10k.zsh
+      dest: .powerlevel10k.zsh
 vim:
   files:
     -
