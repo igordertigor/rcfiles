@@ -7,6 +7,9 @@ zsh:
       src: zshrc.local
       dest: .zshrc.local
     -
+      src: zshrc.pre
+      dest: .zshrc.pre
+    -
       src: powerlevel9k.zsh
       dest: .powerlevel9k.zsh
     -

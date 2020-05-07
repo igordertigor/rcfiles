@@ -143,6 +143,8 @@ function load_nvm (){
 
 #### Configure prompt
 # source .powerlevel9k.zsh
+#
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source .powerlevel10k.zsh
 
 gks () {
