@@ -18,7 +18,8 @@
   "inkscape",
   "gimp",
   "pdftk",
-  "pandoc"
+  "pandoc",
+  "tmux"
 ],
 "coding": [
   "cxxtest",
