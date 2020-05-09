@@ -118,8 +118,6 @@ alias venv2="source .venv2/bin/activate"
 alias venv3="source .venv3/bin/activate"
 
 setopt clobber
-stty stop undef
-stty start undef
 export PATH=$PATH:$HOME/bin/
 alias adb=$HOME/Android/Sdk/platform-tools/adb
 export LESS='-g -i -M -R -S -w -z-4'
