@@ -145,7 +145,7 @@ function load_nvm (){
 # source .powerlevel9k.zsh
 #
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source .powerlevel10k.zsh
+source $HOME/.powerlevel10k.zsh
 
 gks () {
     echo "Applying function: git key sync $1";
