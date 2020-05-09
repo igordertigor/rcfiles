@@ -42,7 +42,9 @@
   "qjackctl",
   "lame",
   "id3v2",
-  "flac"
+  "flac",
+  "mp3info",
+  "sox"
 ],
 "dependencies": {
   "sbt": "wget http://apt.typesafe.com/repo-deb-build-0002.deb\nsudo dpkg -i repo-deb-build-0002.deb\necho \"deb https://dl.bintray.com/sbt/debian /\" | sudo tee -a /etc/apt/sources.list.d/sbt.list\ncurl -sL \"https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823\" | sudo apt-key add",
