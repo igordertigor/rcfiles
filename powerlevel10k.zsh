@@ -121,6 +121,11 @@ ERR_BG=red
     # example               # example user-defined segment (see prompt_example function below)
   )
 
+# Remove time indicator if running in TMUX
+if [ ! -z ${TMUX+x} ]; then
+  unset 'POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS[${#POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL[@]}-1]'
+fi
+
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=nerdfont-complete
   # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
