@@ -36,6 +36,11 @@ bash:
     -
       src: bashrc
       dest: .bashrc
+tmux:
+  files:
+    -
+      src: tmux.conf
+      dest: .tmux.conf
 pomo:
   files:
     -
