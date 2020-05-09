@@ -1,16 +1,16 @@
 source "$HOME/code/powerlevel10k/powerlevel10k.zsh-theme"
 
 # COLOR THEME
-REGULAR_BG=237  # Like TMUX dark gray
+REGULAR_BG=236  # Like TMUX dark gray
 REGULAR_FG=246  # Like TMUX window
 STRONG_FG=247   # Like TMUX current window
 LOW_PRIO_FG=240    # Like TMUX session
 LOW_PRIO_BG=235
 HIGH_PRIO_BG=237  # Orange
 
-GIT_CLEAN_BG=39
-GIT_MOD_BG=38
-GIT_CONFL_BG=40
+GIT_CLEAN_BG=33
+GIT_MOD_BG=31
+GIT_CONFL_BG=34
 GIT_UNTR_BG=$GIT_CLEAN_BG
 
 ERR_FG=yellow
@@ -520,7 +520,7 @@ ERR_BG=red
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$LOW_PRIO_FG
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=$LOW_PRIO_BG
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=$REGULAR_BG
   # Show duration of the last command if takes longer than this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   # Show this many fractional digits. Zero means round to seconds.
@@ -534,8 +534,8 @@ ERR_BG=red
 
   #######################[ background_jobs: presence of background jobs ]#######################
   # Background jobs color.
-  # typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=6
-  # typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=0
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=$REGULAR_FG
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND=$REGULAR_BG
   # Don't show the number of background jobs.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
   # Custom icon.
