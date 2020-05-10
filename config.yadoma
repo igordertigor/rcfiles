@@ -26,7 +26,7 @@ i3:
       src: i3config
       dest: .config/i3/config
     -
-      src: i3status
+      src: i3status.sh
       dest: .config/i3/status
     -
       src: i3status.sh
