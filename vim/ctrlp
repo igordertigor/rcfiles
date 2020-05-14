@@ -2,4 +2,6 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](target|elm-stuff)$'
     \ }
 
+let g:ctrlp_extensions = ['tag']
+
 map <C-F12> :!ctags -R -f tags .<CR>
