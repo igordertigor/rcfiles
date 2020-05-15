@@ -155,3 +155,5 @@ gks () {
     echo "Using device $DEVICE"
     pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
+
+export GIT_TEMPLATE_DIR=$HOME/code/rcfiles/git/
