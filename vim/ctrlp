@@ -4,7 +4,5 @@ let g:ctrlp_custom_ignore = {
 
 let g:ctrlp_extensions = ['tag']
 
-set tags=./tags,tags;
-
 map <C-F12> :!ctags -R -f tags .<CR>
 map t<C-p> :CtrlPTag<CR>

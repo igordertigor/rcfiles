@@ -11,6 +11,13 @@ set nocompatible                         " vim not vi (should technically be set
 set encoding=utf-8
 filetype plugin indent on
 
+" Where to look for tags files:
+" 1. .git/tags;$HOME  look for a file .git/tags in current folder and move up
+"     until $HOME until you find it.
+" 2.  tags;$HOME if you didn't find a .git/tags file, search in the same way
+"     for just tags
+set tags=.git/tags;$HOME,tags;$HOME
+
 " Appearance
 set number                                          " show line numbers
 set listchars=tab:>-,trail:~,extends:>,precedes:<   " Chars to highlight whitespace
