@@ -87,3 +87,8 @@ mail:
     -
       src: mailcap
       dest: .mailcap
+matplotlib:
+  files:
+    -
+      src: matplotlib
+      desc: .config/matplotlib
