@@ -1,25 +1,27 @@
 {
 "basic": [
-  "synclient",
   "i3",
-  "google-chrome-stable",
   "arandr",
   "zathura",
   "pmount",
   "vim",
-  "vim-youcompleteme",
   "python3-venv",
   "zsh",
   "powerline",
   "curl",
   "xclip",
   "qiv",
-  "gthumb",
-  "inkscape",
-  "gimp",
   "pdftk",
   "pandoc",
-  "tmux"
+  "tmux",
+  "curl",
+  "pwgen"
+],
+"extended": [
+  "google-chrome-stable",
+  "gthumb",
+  "inkscape",
+  "gimp"
 ],
 "coding": [
   "cxxtest",
@@ -73,5 +75,8 @@
   "libmp4v2-dev",
   "libmodplug-dev",
   "libmikmod2-dev"
+],
+"pygame-dev": [
+  "libsdl1.2-dev"
 ]
 }
