@@ -15,7 +15,8 @@
   "pandoc",
   "tmux",
   "curl",
-  "pwgen"
+  "pwgen",
+  "htop"
 ],
 "extended": [
   "google-chrome-stable",
