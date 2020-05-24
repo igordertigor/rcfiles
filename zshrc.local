@@ -69,34 +69,18 @@ function check_build_py(){
     fi
 }
 
-function mkvenv2(){
-    if [ -n "${VIRTUAL_ENV}" ] ; then
-        echo "You already have a virtualenv active: $VIRTUAL_ENV"
-        return 1
-    fi
-    local venv_name
-    venv_name=${1:-.venv2}
-    if [ -e $venv_name ] ; then
-        echo "$venv_name already exists, aborting."
-        return 1
-    fi
-    echo "Will setup virtualenv in $venv_name"
-    virtualenv $venv_name
-    source $venv_name/bin/activate
-    pip install -U pip
-    if check_build_py ; then
-        pip install -U --pre pybuilder
-        pyb install_dependencies
-    fi
-}
-
 function mkvenv3(){
     if [ -n "${VIRTUAL_ENV}" ] ; then
         echo "You already have a virtualenv active: $VIRTUAL_ENV"
         return 1
     fi
     local venv_name
-    venv_name=${1:-.venv3}
+    if [ "$1" != "" ]
+    then
+        venv_name=$1
+    else
+        venv_name=${1:-.venv3}
+    fi
     if [ -e $venv_name ] ; then
         echo "$venv_name already exists, aborting."
         return 1
@@ -114,7 +98,6 @@ function mkvenv3(){
     fi
 }
 
-alias venv2="source .venv2/bin/activate"
 alias venv3="source .venv3/bin/activate"
 
 setopt clobber
