@@ -31,6 +31,7 @@
   "sbt",
   "scala",
   "fzf",
+  "python3-tk",
   "exuberant-ctags",
   "silversearcher-ag"
 ],
