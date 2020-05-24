@@ -91,4 +91,4 @@ matplotlib:
   files:
     -
       src: matplotlib
-      desc: .config/matplotlib
+      dest: .config/matplotlib
