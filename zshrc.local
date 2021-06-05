@@ -1,20 +1,3 @@
-#### DJ action
-
-function find_dicer() {
-    amidi -l | awk '/Dicer/ {print $2}'
-}
-
-# function xwax() {
-#     cd $HOME/xwax_playlists/playlists
-#     PLAYLISTS=$(ls -1 | sed -e 's/\(.*\)/-l \0 /')
-#     DICER=$(find_dicer)
-#     XWAX=$HOME/code/xwax/xwax
-#     $XWAX -g /1.4 --dicer $DICER -s /bin/cat -i $HOME/code/xwax/import \
-#         -m 4 -a plughw:Audio4DJ,0,0 -a plughw:Audio4DJ,0,1 \
-#         $PLAYLISTS
-# }
-alias xwax="$HOME/code/xwax/xwax -g /1.4 --dicer $(find_dicer) -s /bin/cat -i $HOME/code/xwax/import -m 4 -a plughw:Audio4DJ,0,0 -a plughw:Audio4DJ,0,1"
-
 #### Git
 
 gic () {
@@ -47,18 +30,6 @@ gap () {
 }
 zle -N gap gap
 bindkey "git a" gap
-
-with_usb () {
-    if [[ $HOST == "leibniz" ]]; then
-        DEVICE=/dev/sda1
-    else
-        DEVICE=/dev/sdb1
-    fi
-    LBUFFER="pmount $DEVICE && "
-    RBUFFER=" && sleep 0.5 && pumount $DEVICE"
-}
-zle -N with_usb with_usb
-bindkey "usb " with_usb
 
 #### Python stuff
 
@@ -139,4 +110,4 @@ gks () {
     pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
 
-export GIT_TEMPLATE_DIR=$HOME/code/rcfiles/git/
+export GIT_TEMPLATE_DIR=$HOME/Code/rcfiles/git/
