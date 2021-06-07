@@ -4,6 +4,12 @@ let g:vimtex_view_method = 'zathura'
 " regexes for ignoring log entries
 let g:vimtex_log_ignore = []
 
+" This should be a list of regular expressions to filter our warnings
+let g:vimtex_quickfix_ignore_filters = [
+    \ 'Regex',
+    \ 'Overfull',
+    \ 'Underfull',
+    \]
 
 " vimtex is not loaded by default (a bug in vim apparently).
 " More information here: https://github.com/lervag/vimtex/issues/1413
