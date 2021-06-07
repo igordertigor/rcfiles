@@ -1,5 +1,5 @@
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 " Using airline as statusline (also contains colors of status line)
