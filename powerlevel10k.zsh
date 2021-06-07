@@ -12,6 +12,8 @@ REGULAR_FG=247  # Like TMUX window
 STRONG_FG=253   # Like TMUX current window
 LOW_PRIO_FG=213   # Like TMUX session
 LOW_PRIO_BG=194
+VENV_FG=$REGULAR_FG
+VENV_BG=$REGULAR_BG
 
 HIGH_PRIO_BG=193  # Orange
 
@@ -911,8 +913,8 @@ fi
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   # Python virtual environment color.
-  # typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=0
-  # typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND=4
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=$VENV_FG
+  typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND=$VENV_BG
   # Don't show Python version next to the virtual environment name.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   # Separate environment name from Python version only with a space.
