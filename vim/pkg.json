@@ -16,6 +16,9 @@
     {"name": "jeetsukumaran/vim-pythonsense", "start": false, "comment": "text objects for python"},
     {"name": "lervag/vimtex", "start": false, "comment": "vim bindings and text objects"},
     {"name": "vim-scripts/indentpython.vim", "start": false, "comment": "proper indent for python"},
+    {"name": "davidhalter/jedi-vim", "start": false, "comment": "improved python vim model"},
+    {"name": "Shougo/deoplete.nvim", "start": false, "comment": "completion"},
+    {"name": "deoplete-plugins/deoplete-jedi", "start": false, "comment": "better search behaviour"},
     {"name": "mileszs/ack.vim", "start": true, "comment": "ag silver searcher"}
   ]
 }
