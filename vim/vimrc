@@ -2,6 +2,10 @@ syntax enable
 " set background=light
 colorscheme flattened_light
 
+call plug#begin()
+Plug 'davidhalter/jedi-vim'
+call plug#end()
+
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
 source $HOME/.vim/lightline
@@ -63,10 +67,6 @@ autocmd FileType python
     \ | set colorcolumn=80
     \ | packadd vim-pythonsense            " Python text objects
     \ | packadd indentpython               " Proper python indentation
-    \ | packadd jedi-vim                   " Better python mode
-    \ | packadd deoplete.nvim              " enables jedi completions
-    \ | packadd deoplete-jedi              " completions for jedi
-
 
 
 "    Web tech
