@@ -33,13 +33,6 @@ bindkey "git a" gap
 
 #### Python stuff
 
-function check_build_py(){
-    if ! [[ -f "$PWD/build.py" ]] ; then
-        echo "No 'build.py' found in current directory"
-        return 1
-    fi
-}
-
 function mkvenv(){
     if [ -n "${VIRTUAL_ENV}" ] ; then
         echo "You already have a virtualenv active: $VIRTUAL_ENV"
@@ -60,10 +53,7 @@ function mkvenv(){
     python3 -m venv $venv_name
     source $venv_name/bin/activate
     pip install -U pip
-    if check_build_py ; then
-        pip install -U --pre pip pybuilder
-        pyb install_dependencies
-    fi
+    pip install -U tox
     if [ -e requirements.txt ] ; then
         pip install -r requirements.txt
     fi
@@ -111,3 +101,29 @@ gks () {
 }
 
 export GIT_TEMPLATE_DIR=$HOME/Code/rcfiles/git/
+
+alias swagger-codegen="java -jar $HOME/bin/swagger-codegen-cli.jar"
+
+
+function ssh_meeting () {
+    gmeet_id=$1
+    if [[ $2 ]]; then
+        case $2; in
+            dev)
+                project=development-304221
+                ;;;
+            prod)
+                project=production-305009
+                ;;;
+        esac
+    else
+        project=development-304221
+    fi
+    all_machines=$(gcloud compute instances list --project=$project | awk '{print $1}')
+    echo $all_machines
+    machine_name=$(echo $all_machines | grep meeting-agent-$gmeet_id)
+    echo "Log locations:"
+    echo "Worker: /var/log/worker.err.log"
+    echo "Rest: /tmp/verbally_*.log"
+    gcloud compute ssh --tunnel-through-iap verbally@$machine_name --project=$project
+}
