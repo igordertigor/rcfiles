@@ -22,6 +22,7 @@ borg create -v --stats \
     --exclude $HOME/.gnupg \
     --exclude $HOME/.virtualenvs \
     --exclude $HOME/.mutt_colors_zenburn \
+    --exclude $HOME/projects/verbally \
     --exclude '*.pyc' \
     --exclude '.venv*' \
     --exclude '__pycache__'

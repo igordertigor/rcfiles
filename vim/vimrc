@@ -1,6 +1,8 @@
 syntax enable
 " set background=light
-colorscheme flattened_light
+" colorscheme flattened_light
+set background=dark
+colorscheme zenburn
 
 call plug#begin()
 Plug 'davidhalter/jedi-vim'

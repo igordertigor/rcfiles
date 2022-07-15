@@ -36,7 +36,13 @@ class LinkParser(HTMLParser):
 
 def process_email(txt):
     mail = EmailParser(policy=default).parsestr(txt)
-    return mail.get_body().get_content()
+    body = mail.get_body()
+    try:
+        return body.get_content()
+    except KeyError:
+        for i in body.walk():
+            if i.get_content_subtype() == 'html':
+                return i.get_content()
 
 
 def get_links(html):

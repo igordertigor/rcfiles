@@ -1,26 +1,11 @@
 source "$HOME/code/powerlevel10k/powerlevel10k.zsh-theme"
 
 # COLOR THEME
-# REGULAR_BG=236  # Like TMUX dark gray
-# REGULAR_FG=246  # Like TMUX window
-# STRONG_FG=247   # Like TMUX current window
-# LOW_PRIO_FG=240    # Like TMUX session
-# LOW_PRIO_BG=235
-#  Light Color Theme
-REGULAR_BG=229  # Like TMUX dark gray
-REGULAR_FG=247  # Like TMUX window
-STRONG_FG=253   # Like TMUX current window
-LOW_PRIO_FG=213   # Like TMUX session
-LOW_PRIO_BG=194
+source "$HOME/code/rcfiles/powerlevel10k-dark"
+# source "$HOME/code/rcfiles/powerlevel10k-light"
+
 VENV_FG=$REGULAR_FG
 VENV_BG=$REGULAR_BG
-
-HIGH_PRIO_BG=193  # Orange
-
-GIT_CLEAN_BG=50
-GIT_MOD_BG=44
-GIT_CONFL_BG=211
-GIT_UNTR_BG=$GIT_CLEAN_BG
 
 ERR_BG=$LOW_PRIO_BG
 ERR_FG=red

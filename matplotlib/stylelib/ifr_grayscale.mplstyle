@@ -1,2 +1,67 @@
+# Defaults: $HOME/.config/matplotlib/matplotlibrc
+# Here only differences from default matplotlibrc file at site-packages/matplotlib/mpl-data/matplotlibrc
+
+# Lines
+lines.linewidth : 1.0
+lines.markeredgecolor : black  ## this also affects tick markers :-(
+
+# Patches
+patch.edgecolor : white
+
+# Boxplot
+boxplot.showcaps : False
+
+boxplot.flierprops.marker : .
+boxplot.flierprops.markersize : 1.0
+boxplot.flierprops.markerfacecolor : black
+boxplot.flierprops.markeredgecolor : None
+boxplot.flierprops.markeredgewidth : 0.0
+
+boxplot.boxprops.linewidth : 0.5
+boxplot.whiskerprops.linewidth : 0.5
+boxplot.capprops.linewidth : 0.5
+boxplot.medianprops.linewidth : 0.5
+boxplot.meanprops.linewidth : 0.5
+
+# Font
+font.size : 10.0
+
+# Axes
+axes.facecolor : None
+axes.linewidth : 0.5
+axes.titlelocation : left
+
+axes.spines.left : True
+axes.spines.bottom : True
+axes.spines.top : False
+axes.spines.right : False
+
 axes.prop_cycle : cycler('linestyle', ['-', '--', ':', '-.'])
+axes.autolimit_mode : round_numbers  ## Check how this looks
+
+xtick.direction : out
+xtick.major.width : 0.5
+ytick.direction : out
+ytick.major.width : 0.5
+
+# Legend
+legend.frameon : False
+legend.fancybox : False
+
+# Figure
+figure.frameon : False
+figure.autolayout : True
+
+# Images
 image.cmap : greys
+
+# specialized plots
+hist.bins : auto
+scatter.marker : o
+scatter.edgecolors : white
+
+# Saving figures
+savefig.format : svg
+savefig.transparent : True  # Transparent background by default
+
+svg.fonttype : path  ## this is default, setting None would not embed fonts (nicer for editing?)

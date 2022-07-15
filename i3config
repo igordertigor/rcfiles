@@ -186,8 +186,9 @@ bindcode 238 exec --no-startup-id /home/ingo/bin/screen_brightness.sh inc
 bindcode 107 exec --no-startup-id import -window root /home/ingo/screenshot.jpg
 
 bindsym $mod+Control+l exec --no-startup-id gnome-screensaver-command -l
-bindsym $mod+o exec --no-startup-id /home/ingo/.screenlayout/office.sh
-bindsym $mod+Shift+o exec --no-startup-id /home/ingo/.screenlayout/single.sh
+
+bindsym $mod+o exec --no-startup-id /home/ingo/.screenlayout/external-monitor.sh
+bindsym $mod+Shift+o exec --no-startup-id /home/ingo/.screenlayout/laptop-only.sh
 
 # some default workspaces
 assign [class="firefox"] 3
@@ -208,11 +209,14 @@ exec synclient TapButton3=2
 exec nm-applet
 # exec xfce4_power_manager
 # exec /home/ingo/.dropbox-dist/dropboxd
-exec firefox
+# exec firefox
+exec vivaldi-stable
 exec xrdb -merge ~/.Xdefaults
 exec setxkbmap us
 exec qiv -xtf ~/Pictures/background.jpg
 
+bindsym $mod+Ctrl+less move workspace to output left
+bindsym $mod+Ctrl+greater move workspace to output right
 
 workspace 1 output HDMI-2
 workspace 2 output HDMI-2

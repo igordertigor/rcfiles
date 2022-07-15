@@ -10,7 +10,6 @@ group -group nonpersonal -rx "Spotify"
 group -group nonpersonal -rx "Netflix"
 group -group nonpersonal -rx "@linkedin.com"
 group -group nonpersonal -rx "@ago.ca"
-group -group nonpersonal -rx "@urbansportsclub.com"
 group -group nonpersonal -rx "Vertical Ventures"
 group -group nonpersonal -rx "Juno"
 group -group nonpersonal -rx "@freedom.to"
@@ -27,6 +26,15 @@ group -group nonpersonal -rx '@youtube.com'
 group -group nonpersonal -rx '@fiverr.com'
 group -group nonpersonal -rx '@comms.yahoo.net'
 group -group nonpersonal -rx '@turo.com'
+group -group nonpersonal -rx '@bowring.com'
+group -group nonpersonal -rx '@ieee-ccwc.org'
+group -group nonpersonal -rx '@cycleto.ca'
+group -group nonpersonal -rx '@techhubresearch.com'
+group -group nonpersonal -rx 'newsletter'
+group -group nonpersonal -rx '@mcsjonline.org'
+group -group nonpersonal -rx 'communications@'
+group -group nonpersonal -rx 'Experdia.ca'
+group -group nonpersonal -rx 'wirexapp.com'
 group -group nonpersonal -addr "stellen@academics.de"
 group -group nonpersonal -addr 'tso@tso.ca'
 group -group nonpersonal -addr 'noreply@getpocket.com'
@@ -54,6 +62,9 @@ group -group nonpersonal -addr 'no-reply@amazon.ca'
 group -group nonpersonal -addr 'promotion5@amazon.ca'
 group -group nonpersonal -addr 'mohmass@uos.de'
 group -group nonpersonal -addr 'genmarkawelsh15@gmail.com'
+group -group nonpersonal -addr 'MEC'
+group -group nonpersonal -addr 'Expedia'
+group -group nonpersonal -addr 'editor.sumi5@gmail.com'
 
 # Tag spam-like messages with C-w
 macro index \cw "T (~s SPAM \
@@ -62,7 +73,8 @@ macro index \cw "T (~s SPAM \
                    |~s 'scikit-learn' \
                    |~s 'cosyne-roomshare' \
                    |%f nonpersonal \
+                   |~f 'Uber Eats' \
                    )<enter>"
 
 # Tag old messages oder than 3 months
-macro index \co "T (~d >3m ~d 01/01/2020-31/12/2020)<enter>;s=archive/2020/"
+macro index \co "T (~d >3m ~d 01/01/2022-31/12/2022)<enter>;s=archive/2022/"

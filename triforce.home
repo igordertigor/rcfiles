@@ -9,3 +9,7 @@ sysvenv3:
     pomo: {}
     usiq: {}
     startt: {}
+    mypy: {}
+    tox: {}
+    youtube_dl:
+        symlink: ['youtube-dl']

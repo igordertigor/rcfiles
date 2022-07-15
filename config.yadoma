@@ -92,3 +92,8 @@ matplotlib:
     -
       src: matplotlib
       dest: .config/matplotlib
+alacritty:
+  files:
+    -
+      src: alacritty.yml
+      dest: .config/alacritty/alacritty.yml
