@@ -67,11 +67,17 @@ autocmd FileType python
     \   set expandtab
     \ | set tabstop=4
     \ | set shiftwidth=4
-    \ | set autoindent
     \ | set fileformat=unix
     \ | set colorcolumn=80
     \ | packadd vim-pythonsense            " Python text objects
     \ | packadd indentpython               " Proper python indentation
+"    \ | set autoindent
+
+
+
+autocmd FileType bash
+    \   set expandtab
+    \ | set tabstop=4
 
 
 "    Web tech
