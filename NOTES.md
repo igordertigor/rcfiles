@@ -15,4 +15,8 @@ That line should point to a python virtual env, which should also exist. Activat
 pip install pynvim jedi
 ```
 After that the jedi-vim plugin can access python jedi.
-
+- The package indentpython seems to not make it to the right place: If your python indentation doesn't work properly, you may need to move that package to the right location
+```bash
+cp -r vim/pack/ingo/opt/indentpython.vim/indent/python.vim vim/indent/
+```
+make sure the target folder exists.
