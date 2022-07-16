@@ -1,12 +1,14 @@
 syntax enable
-" set background=light
-" colorscheme flattened_light
-set background=dark
-colorscheme zenburn
 
 call plug#begin()
 Plug 'davidhalter/jedi-vim'
+Plug 'jacoborus/tender'
 call plug#end()
+
+" set background=light
+" colorscheme flattened_light
+set background=dark
+colorscheme tender
 
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
