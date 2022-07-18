@@ -13,3 +13,5 @@ sysvenv3:
     tox: {}
     youtube_dl:
         symlink: ['youtube-dl']
+    pynvim: {}
+    neovim: {}

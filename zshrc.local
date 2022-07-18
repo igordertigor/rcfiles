@@ -61,6 +61,16 @@ function mkvenv(){
 
 alias venv="source .venv/bin/activate"
 
+
+function mkvenv(){
+    mkvenv3 venv
+}
+
+alias venv3="source .venv3/bin/activate"
+alias venv="source venv/bin/activate"
+
+
+
 setopt clobber
 export PATH=$PATH:$HOME/bin/
 alias adb=$HOME/Android/Sdk/platform-tools/adb
@@ -100,7 +110,7 @@ gks () {
     pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
 
-export GIT_TEMPLATE_DIR=$HOME/Code/rcfiles/git/
+export GIT_TEMPLATE_DIR=$HOME/code/rcfiles/git/
 
 alias swagger-codegen="java -jar $HOME/bin/swagger-codegen-cli.jar"
 
@@ -125,5 +135,5 @@ function ssh_meeting () {
     echo "Log locations:"
     echo "Worker: /var/log/worker.err.log"
     echo "Rest: /tmp/verbally_*.log"
-    gcloud compute ssh --tunnel-through-iap verbally@$machine_name --project=$project
+    TERM=xterm-256color gcloud compute ssh --tunnel-through-iap verbally@$machine_name --project=$project
 }

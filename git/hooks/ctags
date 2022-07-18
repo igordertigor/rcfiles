@@ -3,5 +3,5 @@ set -e
 
 trap 'rm -f "$$.tags"' EXIT
 git ls-files |
-  ctags --tag-relative -L - -f"$$.tags"
-mv "$$.tags" ".git/tags"
+  ctags --tag-relative -L - -f".git/$$.tags"
+mv ".git/$$.tags" ".git/tags"
