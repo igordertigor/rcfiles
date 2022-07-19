@@ -6,7 +6,7 @@ set spoolfile=+"ingofruend/INBOX"
 set header_cache=$HOME/.Mail/.hcache
 set index_format="%4C %Z %{%y %b %d} %-15.15L (%4l) %s"
 
-source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+source "$HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc"
 
 # Account settings
 set realname="Ingo Fründ"
@@ -23,7 +23,7 @@ set edit_headers=yes
 set text_flowed=yes
 
 # Editing
-set editor="vim -c 'setlocal fo+=aw' +/^$"
+set editor="nvim -c 'setlocal fo+=aw' +/^$"
 set send_charset="iso-8859-1:utf-8"
 set askcc=yes
 
