@@ -3,8 +3,6 @@
 vim/.netrwhist
 vim/autoload
 vim/doc
-vim/pack
 vim/plugin
-vim/repos
 vim/spell
 vim/indent
