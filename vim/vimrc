@@ -34,12 +34,6 @@ call plug#end()
 set background=dark
 colorscheme tender
 
-call plug#begin()
-Plug 'davidhalter/jedi-vim'
-Plug 'jeetsukumaran/vim-pythonsense'    " python objects
-call plug#end()
-
-
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
 source $HOME/.vim/lightline
