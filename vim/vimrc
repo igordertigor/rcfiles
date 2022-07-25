@@ -1,10 +1,32 @@
 syntax enable
 
 call plug#begin()
-Plug 'davidhalter/jedi-vim'
-Plug 'jacoborus/tender'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
-Plug 'zchee/deoplete-jedi'
+
+" General appearance
+Plug 'jacoborus/tender'  " color scheme
+Plug 'ctrlpvim/ctrlp.vim'   " fuzzy search by ctrl-p
+Plug 'wellle/targets.vim'    " very versatile text objects ai) etc
+Plug 'itchyny/lightline.vim'   " light status bar
+Plug 'tpope/vim-fugitive'   " vim support (mostly for status line)
+
+" Linting
+Plug 'vim-syntastic/syntastic'   " syntastic linting
+Plug 'igordertigor/csvmodel-syntastic'  " syntastic checker for csvmodel
+
+" Python
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}  " autocompletion
+Plug 'davidhalter/jedi-vim'   " jedi refactoring for python
+Plug 'zchee/deoplete-jedi'    " jedi autocompletion plugin for deoplete
+Plug 'jeetsukumaran/vim-pythonsense'  " pyhton text objects
+Plug 'vim-scripts/indentpython.vim'  " more pep8-like python indentation
+
+" Several other tools
+Plug 'vim-scripts/a.vim'   " Alternate between .c and .h files :A ...
+Plug 'lervag/vimtex'   " vimtex
+Plug 'ElmCast/elm-vim'     " elm support
+Plug 'alvan/vim-closetag'  " close html tags
+Plug 'mileszs/ack.vim'   " ag silver server
+
 call plug#end()
 
 " set background=light
@@ -76,8 +98,6 @@ autocmd FileType python
     \ | set shiftwidth=4
     \ | set fileformat=unix
     \ | set colorcolumn=80
-    \ | packadd vim-pythonsense            " Python text objects
-    \ | packadd indentpython               " Proper python indentation
 "    \ | set autoindent
 
 
@@ -130,14 +150,12 @@ autocmd FileType make set noexpandtab
 autocmd FileType C,cpp
     \   set noexpandtab
     \ | set tabstop=4
-    \ | packadd a.vim    " :A to switch between source and header
 
 
 " Normal text
 autocmd FileType rst set wrap linebreak nolist formatoptions+=l
 autocmd FileType tex
             \ set wrap linebreak nolist formatoptions+=l |
-            \ packadd vimtex |
             \ source $HOME/.vim/vimtex
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 autocmd FileType md,mkd,markdown

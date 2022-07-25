@@ -11,6 +11,7 @@ sysvenv3:
     startt: {}
     mypy: {}
     tox: {}
+    csvmodel: {}
     youtube_dl:
         symlink: ['youtube-dl']
     pynvim: {}
