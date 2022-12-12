@@ -12,5 +12,6 @@ sysvenv3:
     mypy: {}
     tox: {}
     csvmodel: {}
+    cookiecutter: {}
     youtube_dl:
         symlink: ['youtube-dl']
