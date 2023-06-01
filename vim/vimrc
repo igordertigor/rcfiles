@@ -166,3 +166,6 @@ autocmd FileType md,mkd,markdown
     \ | setlocal wrap
     \ | setlocal expandtab
     \ | setlocal textwidth=0
+
+" DVC
+autocmd! BufNewFile,BufRead Dvcfile,*.dvc,dvc.log setfiletype yaml
