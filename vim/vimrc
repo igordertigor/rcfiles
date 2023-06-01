@@ -19,6 +19,7 @@ Plug 'davidhalter/jedi-vim'   " jedi refactoring for python
 Plug 'zchee/deoplete-jedi'    " jedi autocompletion plugin for deoplete
 Plug 'jeetsukumaran/vim-pythonsense'  " pyhton text objects
 Plug 'vim-scripts/indentpython.vim'  " more pep8-like python indentation
+Plug 'igordertigor/bnb.vim'   " black and blue code formatting
 
 " Several other tools
 Plug 'vim-scripts/a.vim'   " Alternate between .c and .h files :A ...
@@ -37,6 +38,9 @@ colorscheme tender
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
 source $HOME/.vim/lightline
+
+
+source $HOME/.vim/bnb
 
 
 set nocompatible                         " vim not vi (should technically be set automatically)
