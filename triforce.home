@@ -12,6 +12,7 @@ sysvenv3:
     mypy: {}
     tox: {}
     csvmodel: {}
+    watchdog: ['watchmedo']
     youtube_dl:
         symlink: ['youtube-dl']
     pynvim: {}
