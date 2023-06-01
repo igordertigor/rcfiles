@@ -131,8 +131,25 @@ function ssh_meeting () {
     all_machines=$(gcloud compute instances list --project=$project | awk '{print $1}')
     echo $all_machines
     machine_name=$(echo $all_machines | grep meeting-agent-$gmeet_id)
+    echo "Now connecting to machine: $machine_name"
     echo "Log locations:"
     echo "Worker: /var/log/worker.err.log"
     echo "Rest: /tmp/verbally_*.log"
     TERM=xterm-256color gcloud compute ssh --tunnel-through-iap verbally@$machine_name --project=$project
 }
+
+function git_pull_and_delete () {
+    CURRENT_BRANCH=$(git branch --show-current)
+    if [[ "$CURRENT_BRANCH" == "master" ]];
+    then
+        echo "On master, not doing anything";
+    else
+        echo "Will trash this branch"
+        git checkout master
+        git pull
+        git branch -d "$CURRENT_BRANCH"
+    fi
+}
+
+source $HOME/.zfunc/_mlem
+source $HOME/.zfunc/_vdb
