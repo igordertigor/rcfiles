@@ -3719,3 +3719,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
