@@ -13,6 +13,7 @@ sysvenv3:
     tox: {}
     csvmodel: {}
     watchdog: ['watchmedo']
+    cookiecutter: {}
     youtube_dl:
         symlink: ['youtube-dl']
     pynvim: {}

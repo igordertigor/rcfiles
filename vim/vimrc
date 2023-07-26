@@ -27,6 +27,7 @@ Plug 'lervag/vimtex'   " vimtex
 Plug 'ElmCast/elm-vim'     " elm support
 Plug 'alvan/vim-closetag'  " close html tags
 Plug 'mileszs/ack.vim'   " ag silver server
+Plug 'hashivim/vim-terraform'   " terraform mode
 
 Plug 'jvirtanen/vim-hcl'   " hashicorp (packer, terraform, ...)
 
