@@ -28,12 +28,20 @@ Plug 'ElmCast/elm-vim'     " elm support
 Plug 'alvan/vim-closetag'  " close html tags
 Plug 'mileszs/ack.vim'   " ag silver server
 
+Plug 'jvirtanen/vim-hcl'   " hashicorp (packer, terraform, ...)
+
+Plug 'leafgarland/typescript-vim'   " typescript
+
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
 " set background=light
 " colorscheme flattened_light
-set background=dark
-colorscheme tender
+" set background=dark
+" colorscheme tender
+set background=light
+colorscheme flattened_light
 
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
@@ -143,6 +151,10 @@ autocmd FileType elm
     \ | set softtabstop=4
     \ | set shiftwidth=4
     \ | set expandtab
+
+autocmd FileType typescript
+    \   set expandtab
+    \ | set shiftwidth=2
 
 autocmd FileType make set noexpandtab
 autocmd FileType C,cpp

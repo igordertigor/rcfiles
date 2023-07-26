@@ -153,3 +153,4 @@ function git_pull_and_delete () {
 
 source $HOME/.zfunc/_mlem
 source $HOME/.zfunc/_vdb
+source $HOME/.zfunc/_vtool

@@ -317,7 +317,7 @@ schemes:
       magenta: '0xffaf00'
       cyan:    '0x00afaf'
       white:   '0x5f8787'
-colors: *solarized_dark
+colors: *solarized_light
 # Colors (Tomorrow Night)
 #colors:
   # Default colors
