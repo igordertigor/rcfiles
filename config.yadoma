@@ -20,6 +20,11 @@ vim:
     -
       src: vim
       dest: .vim
+nvim:
+  files:
+    -
+      src: nvchad-custom
+      dest: .config/nvim/lua/custom
 i3:
   files:
     -
