@@ -52,31 +52,58 @@ Expunge Both
 Sync All
 SyncState *
 
-# GMAIL
+# TAPEDEQ
 
-IMAPAccount gmail
-Host imap.gmail.com
-User "ingo.fruend@googlemail.com"
-PassCmd "lpass show --password 3709079601136425669"
+IMAPAccount tapedeq
+Host sslin.de
+User "ingo@tapedeq.com"
+PassCmd "lpass show --password 7835615909275357166"
 SSLType IMAPS
 
-IMAPStore gmail-remote
-Account gmail
+IMAPStore tapedeq-remote
+Account tapedeq
 UseNamespace yes
+Path INBOX
 
-MaildirStore gmail-local
-Path ~/.Mail/gmail/
-Inbox ~/.Mail/gmail/INBOX
+MaildirStore tapedeq-local
+Path ~/.Mail/tapedeq/
+Inbox ~/.Mail/tapedeq/INBOX
 SubFolders Legacy
 
-Channel gmail
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns "INBOX" "xwax" "StuSti"
+Channel tapedeq
+Master :tapedeq-remote:
+Slave :tapedeq-local:
+Patterns "INBOX" "INBOX/Sent" "INBOX/SPAM"
 Create Slave
 Expunge Both
 Sync All
 SyncState *
+
+# # GMAIL
+# 
+# IMAPAccount gmail
+# Host imap.gmail.com
+# User "ingo.fruend@googlemail.com"
+# PassCmd "lpass show --password 3709079601136425669"
+# SSLType IMAPS
+# 
+# IMAPStore gmail-remote
+# Account gmail
+# UseNamespace yes
+# 
+# MaildirStore gmail-local
+# Path ~/.Mail/gmail/
+# Inbox ~/.Mail/gmail/INBOX
+# SubFolders Legacy
+# 
+# Channel gmail
+# Master :gmail-remote:
+# Slave :gmail-local:
+# Patterns "INBOX" "xwax" "StuSti"
+# Create Slave
+# Expunge Both
+# Sync All
+# SyncState *
 
 # GROUPS
 
@@ -84,7 +111,7 @@ Group df
 Channels ingostarr ingofruend
 
 Group private
-Channels ingostarr gmail
+Channels ingostarr
 
 Group all
-Channels ingostarr ingofruend gmail
+Channels ingostarr ingofruend tapedeq

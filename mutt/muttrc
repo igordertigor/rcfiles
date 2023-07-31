@@ -53,6 +53,7 @@ mailboxes        \
     +gmail/StuSti \
     +ingostarr/INBOX \
     +ingofruend/INBOX \
+    +tapedeq/INBOX \
     +archive/2013 \
     +archive/2014 \
     +archive/2015 \
@@ -62,7 +63,8 @@ mailboxes        \
     +archive/2019 \
     +archive/2020 \
     +archive/2021 \
-    +archive/2022
+    +archive/2022 \
+    +archive/2023
 
 ######################## Identities ############################
 # Changing identity
@@ -74,15 +76,18 @@ macro generic "<F4>" ":set from=mail@ingofruend.net"
 folder-hook "gmail/*" set from=ingo.fruend@googlemail.com
 folder-hook "ingofruend/*" set from=mail@ingofruend.net
 folder-hook "ingostarr/*" set from=dj@ingostarr.de
+folder-hook "tqapedeq/*" set from=ingo@tapedeq.com
 
 folder-hook "gmail/*"      'set realname="Ingo Fründ"'
 folder-hook "ingofruend/*" 'set realname="Ingo Fründ"'
 folder-hook "ingostarr/*"  'set realname="Ingo Starr"'
+folder-hook "tapedeq/*"    'set realname="Ingo Fründ"'
 
 # Send copies to myself
 folder-hook "gmail/*"      my_hdr Bcc: ingo.fruend@googlemail.com
 folder-hook "ingofruend/*" my_hdr Bcc: mail@ingofruend.net
 folder-hook "ingostarr/*"  my_hdr Bcc: dj@ingostarr.de
+folder-hook "tapedeq/*" my_hdr Bcc: ingo@tapedeq.com
 
 # Mark those copies as read
 folder-hook "gmail/*" 'push "<tag-prefix-cond><tag-message><end-cond><tag-pattern>~f ingo.fruend@googlemail.com<enter><tag-prefix-cond><clear-flag>N<tag-prefix-cond><tag-message>"'
@@ -100,6 +105,8 @@ send-hook "~f dj@ingostarr.de" set sig_dashes
 send-hook "~f dj@ingostarr.de" set signature="~/.mutt/signatures/signature.py|"
 send-hook "~f mail@ingofruend.net" set sig_dashes
 send-hook "~f mail@ingofruend.net" set signature="~/.mutt/signatures/signature.txt"
+send-hook "~f ingo@tapedeq.com" set sig_dashes
+send-hook "~f ingo@tapedeq.com" set signature="~/.mutt/signatures/tapedeq.txt"
 
 #################### Saving messages ###########################
 

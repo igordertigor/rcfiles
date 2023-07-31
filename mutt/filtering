@@ -77,4 +77,4 @@ macro index \cw "T (~s SPAM \
                    )<enter>"
 
 # Tag old messages oder than 3 months
-macro index \co "T (~d >3m ~d 01/01/2022-31/12/2022)<enter>;s=archive/2022/"
+macro index \co "T (~d >3m ~d 01/01/2023-31/12/2023)<enter>;s=archive/2023/"
