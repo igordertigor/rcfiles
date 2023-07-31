@@ -71,7 +71,7 @@ alias venv="source .venv/bin/activate"
 
 
 setopt clobber
-export PATH=$PATH:$HOME/bin/
+export PATH=$HOME/.local/bin/:$HOME/bin/:$PATH
 alias adb=$HOME/Android/Sdk/platform-tools/adb
 export LESS='-g -i -M -R -S -w -z-4'
 export VISUAL='vim'

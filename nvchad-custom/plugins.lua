@@ -13,12 +13,18 @@ local plugins = {
         "lua-language-server",
         "stylua",
 
+        -- bash
+        "bash-language-server",
+
         -- web dev stuff
         "css-lsp",
         "html-lsp",
         "typescript-language-server",
         "deno",
         "prettier",
+
+        -- text
+        "ltex-ls",
       }
     }
   },
