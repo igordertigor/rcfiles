@@ -1,8 +1,9 @@
 source "$HOME/code/powerlevel10k/powerlevel10k.zsh-theme"
 
 # COLOR THEME
-source "$HOME/code/rcfiles/powerlevel10k-dark"
+# source "$HOME/code/rcfiles/powerlevel10k-dark"
 # source "$HOME/code/rcfiles/powerlevel10k-light"
+source "$HOME/code/rcfiles/powerlevel10k-light"
 
 VENV_FG=$REGULAR_FG
 VENV_BG=$REGULAR_BG

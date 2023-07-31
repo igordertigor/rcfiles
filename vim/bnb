@@ -1,1 +1,5 @@
+" augroup bnb_on_save
+"   autocmd!
+"   autocmd BufWritePre *.py Bnb
+" augroup end
 nnoremap <F9> :Bnb<CR>

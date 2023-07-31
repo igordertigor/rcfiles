@@ -37,7 +37,7 @@ axes.spines.top : False
 axes.spines.right : False
 
 axes.prop_cycle : cycler('color', ['66c2a5','fc8d62','8da0cb','e78ac3','a6d854','ffd92f'])
-axes.autolimit_mode : round_numbers  ## Check how this looks
+# axes.autolimit_mode : round_numbers  ## Check how this looks
 
 xtick.direction : out
 xtick.major.width : 0.5

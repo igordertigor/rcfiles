@@ -1,5 +1,5 @@
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](target|elm-stuff|node_modules|.*.egg)$'
+    \ 'dir': '\v[\/](target|elm-stuff|node_modules|.*.egg|git)$'
     \ }
 
 let g:ctrlp_extensions = ['tag']

@@ -33,13 +33,6 @@ bindkey "git a" gap
 
 #### Python stuff
 
-function check_build_py(){
-    if ! [[ -f "$PWD/build.py" ]] ; then
-        echo "No 'build.py' found in current directory"
-        return 1
-    fi
-}
-
 function mkvenv(){
     if [ -n "${VIRTUAL_ENV}" ] ; then
         echo "You already have a virtualenv active: $VIRTUAL_ENV"
@@ -60,6 +53,14 @@ function mkvenv(){
     else
         venv_name=${2:-.venv}
     fi
+
+    if [ "$2" != "" ]
+    then
+        pyversion=$2
+    else
+        pyversion=${2:-3.8}
+    fi
+
     if [ -e $venv_name ] ; then
         echo "$venv_name already exists, aborting."
         return 1
@@ -82,8 +83,9 @@ function mkvenv(){
 
 alias venv="source .venv/bin/activate"
 
+
 setopt clobber
-export PATH=$PATH:$HOME/bin/
+export PATH=$HOME/.local/bin/:$HOME/bin/:$PATH
 alias adb=$HOME/Android/Sdk/platform-tools/adb
 export LESS='-g -i -M -R -S -w -z-4'
 export VISUAL='vim'
@@ -121,6 +123,50 @@ gks () {
     pmount $DEVICE && git $1 && sleep .5 && pumount $DEVICE
 }
 
-export GIT_TEMPLATE_DIR=$HOME/Code/rcfiles/git/
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export GIT_TEMPLATE_DIR=$HOME/code/rcfiles/git/
+
+alias swagger-codegen="java -jar $HOME/bin/swagger-codegen-cli.jar"
+
+
+function ssh_meeting () {
+    gmeet_id=$1
+    if [[ $2 ]]; then
+        case $2; in
+            dev)
+                project=development-304221
+                ;;;
+            prod)
+                project=production-305009
+                ;;;
+        esac
+    else
+        project=development-304221
+    fi
+    all_machines=$(gcloud compute instances list --project=$project | awk '{print $1}')
+    echo $all_machines
+    machine_name=$(echo $all_machines | grep meeting-agent-$gmeet_id)
+    echo "Now connecting to machine: $machine_name"
+    echo "Log locations:"
+    echo "Worker: /var/log/worker.err.log"
+    echo "Rest: /tmp/verbally_*.log"
+    TERM=xterm-256color gcloud compute ssh --tunnel-through-iap verbally@$machine_name --project=$project
+}
+
+function git_pull_and_delete () {
+    CURRENT_BRANCH=$(git branch --show-current)
+    if [[ "$CURRENT_BRANCH" == "master" ]];
+    then
+        echo "On master, not doing anything";
+    else
+        echo "Will trash this branch"
+        git checkout master
+        git pull
+        git branch -d "$CURRENT_BRANCH"
+    fi
+}
+
+source $HOME/.zfunc/_mlem
+source $HOME/.zfunc/_vdb
+source $HOME/.zfunc/_vtool

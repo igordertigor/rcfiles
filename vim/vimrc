@@ -20,7 +20,6 @@ Plug 'davidhalter/jedi-vim'   " jedi refactoring for python
 Plug 'zchee/deoplete-jedi'    " jedi autocompletion plugin for deoplete
 Plug 'jeetsukumaran/vim-pythonsense'  " pyhton text objects
 Plug 'vim-scripts/indentpython.vim'  " more pep8-like python indentation
-Plug 'igordertigor/bnb.vim'  " Black and blue plugin
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -34,18 +33,27 @@ Plug 'alvan/vim-closetag'  " close html tags
 Plug 'mileszs/ack.vim'   " ag silver server
 Plug 'hashivim/vim-terraform'   " terraform mode
 
-Plug 'cespare/vim-toml'  " no longer needed for v0.6 of nvim
+Plug 'jvirtanen/vim-hcl'   " hashicorp (packer, terraform, ...)
+
+Plug 'leafgarland/typescript-vim'   " typescript
+
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
 " set background=light
 " colorscheme flattened_light
-set background=dark
-colorscheme tender
+" set background=dark
+" colorscheme tender
+set background=light
+colorscheme flattened_light
 
 " Using airline as statusline (also contains colors of status line)
 " source $HOME/.vim/airline
 source $HOME/.vim/lightline
+
+
+source $HOME/.vim/bnb
 
 
 set nocompatible                         " vim not vi (should technically be set automatically)
@@ -78,8 +86,7 @@ source $HOME/.vim/syntastic
 " source $HOME/.vim/ale
 
 " Set up python3 to virtual env
-" let g:python3_host_prog = "/Users/ingo/.sysvenvs/python3.8/bin/python"
-let g:python3_host_prog = "$HOME/.virtualenvs/sysvenv3/bin/python"
+let g:python3_host_prog = '~/.virtualenvs/sysvenv3/bin/python3'
 
 " map f3 and f4 to cumulatively toggle spellchecking in english and german
 source $HOME/.vim/valentin.vim
@@ -105,7 +112,6 @@ autocmd FileType python
     \ | set fileformat=unix
     \ | set colorcolumn=80
 "    \ | set autoindent
-
 
 
 autocmd FileType bash
@@ -153,6 +159,10 @@ autocmd FileType elm
     \ | set shiftwidth=4
     \ | set expandtab
 
+autocmd FileType typescript
+    \   set expandtab
+    \ | set shiftwidth=2
+
 autocmd FileType make set noexpandtab
 autocmd FileType C,cpp
     \   set noexpandtab
@@ -175,3 +185,6 @@ autocmd FileType md,mkd,markdown
     \ | setlocal wrap
     \ | setlocal expandtab
     \ | setlocal textwidth=0
+
+" DVC
+autocmd! BufNewFile,BufRead Dvcfile,*.dvc,dvc.log setfiletype yaml

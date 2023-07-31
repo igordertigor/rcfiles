@@ -3,6 +3,7 @@
   "i3",
   "arandr",
   "zathura",
+  "nvim",
   "pmount",
   "vim",
   "python3-venv",
@@ -22,7 +23,8 @@
   "google-chrome-stable",
   "gthumb",
   "inkscape",
-  "gimp"
+  "gimp",
+  "ffmpeg"
 ],
 "coding": [
   "cxxtest",
