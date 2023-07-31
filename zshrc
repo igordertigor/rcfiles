@@ -3703,3 +3703,6 @@ zrclocal
 
 # added by travis gem
 [ -f /home/ingo/.travis/travis.sh ] && source /home/ingo/.travis/travis.sh
+
+# Created by `pipx` on 2023-07-10 19:55:50
+export PATH="$PATH:/home/ingo/.local/bin"

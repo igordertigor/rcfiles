@@ -45,26 +45,37 @@ function mkvenv(){
         echo "You already have a virtualenv active: $VIRTUAL_ENV"
         return 1
     fi
-    local venv_name
+
     if [ "$1" != "" ]
     then
-        venv_name=$1
+        pyversion=$1
     else
-        venv_name=${1:-.venv}
+        pyversion=3.11
+    fi
+
+    local venv_name
+    if [ "$2" != "" ]
+    then
+        venv_name=$2
+    else
+        venv_name=${2:-.venv}
     fi
     if [ -e $venv_name ] ; then
         echo "$venv_name already exists, aborting."
         return 1
     fi
-    echo "Will setup virtualenv in $venv_name"
-    python3 -m venv $venv_name
+
+    echo "Will setup py{$pyversion} virtualenv in $venv_name"
+    python${pyversion} -m venv $venv_name
     source $venv_name/bin/activate
     pip install -U pip
     if check_build_py ; then
         pip install -U --pre pip pybuilder
         pyb install_dependencies
     fi
-    if [ -e requirements.txt ] ; then
+    if [ -e setup.cfg ]; then
+        pip install -e .
+    elif [ -e requirements.txt ] ; then
         pip install -r requirements.txt
     fi
 }
@@ -111,3 +122,5 @@ gks () {
 }
 
 export GIT_TEMPLATE_DIR=$HOME/Code/rcfiles/git/
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
