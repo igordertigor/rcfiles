@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'   " vim support (mostly for status line)
 " Linting
 Plug 'vim-syntastic/syntastic'   " syntastic linting
 Plug 'igordertigor/csvmodel-syntastic'  " syntastic checker for csvmodel
+" Plug 'dense-analysis/ale'  " instead of syntastic
 
 " Python
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}  " autocompletion
@@ -19,6 +20,11 @@ Plug 'davidhalter/jedi-vim'   " jedi refactoring for python
 Plug 'zchee/deoplete-jedi'    " jedi autocompletion plugin for deoplete
 Plug 'jeetsukumaran/vim-pythonsense'  " pyhton text objects
 Plug 'vim-scripts/indentpython.vim'  " more pep8-like python indentation
+Plug 'igordertigor/bnb.vim'  " Black and blue plugin
+
+" Javascript
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Several other tools
 Plug 'vim-scripts/a.vim'   " Alternate between .c and .h files :A ...
@@ -27,6 +33,8 @@ Plug 'ElmCast/elm-vim'     " elm support
 Plug 'alvan/vim-closetag'  " close html tags
 Plug 'mileszs/ack.vim'   " ag silver server
 Plug 'hashivim/vim-terraform'   " terraform mode
+
+Plug 'cespare/vim-toml'  " no longer needed for v0.6 of nvim
 
 call plug#end()
 
@@ -67,6 +75,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " Syntastic syntax checking
 source $HOME/.vim/syntastic
+" source $HOME/.vim/ale
 
 " Set up python3 to virtual env
 " let g:python3_host_prog = "/Users/ingo/.sysvenvs/python3.8/bin/python"
@@ -84,6 +93,7 @@ map <f7> <ESC>u: set paste<CR>.:set nopaste<CR>gi
 
 source $HOME/.vim/ctrlp
 source $HOME/.vim/ack
+source $HOME/.vim/bnb
 
 
 " Filetypes
