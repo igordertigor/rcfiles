@@ -29,3 +29,14 @@ lspconfig.ltex.setup{
   },
   on_attach = on_attach,
 }
+
+lspconfig.yamlls.setup{
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+        ["https://raw.githubusercontent.com/iterative/dvcyaml-schema/master/schema.json"] = "/dvc.yaml",
+      }
+    }
+  }
+}

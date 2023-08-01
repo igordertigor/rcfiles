@@ -23,8 +23,9 @@ local plugins = {
         "deno",
         "prettier",
 
-        -- text
+        -- others
         "ltex-ls",
+        "yaml-language-server",
       }
     }
   },
