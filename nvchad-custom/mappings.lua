@@ -1,6 +1,23 @@
 local M = {}
 
 M.abc = {
+  n = {
+    ["@v"] = {
+      function ()
+        vim.cmd(":s/☐/☑/")
+        vim.cmd(":nohl")
+      end,
+      "check"
+    },
+    ["@x"] = {
+      function ()
+        vim.cmd(":s/☐/☒/")
+        vim.cmd(":nohl")
+      end,
+      "cross"
+    },
+    ["<leader>N"] = {":Telescope find_files find_command=./new<CR><CR>", "new note", opts = {nowait = true}},
+  },
   i = {
     ["@|>"] = {"↦", "maps to arrow", opts = {nowait = true}},
     ["@->"] = {"→", "right arrow", opts = {nowait = true}},
@@ -10,8 +27,6 @@ M.abc = {
     ["@v"] = {"☑", "checkbox checked", opts = {nowait = true}},
     ["@x"] = {"☒", "checkbox crossed", opts = {nowait = true}},
   },
-  n = {
-    ["<leader>N"] = {":Telescope find_files find_command=./new<CR><CR>", "new note", opts = {nowait = true}}
   }
 }
 
