@@ -27,7 +27,6 @@ M.abc = {
     ["@v"] = {"☑", "checkbox checked", opts = {nowait = true}},
     ["@x"] = {"☒", "checkbox crossed", opts = {nowait = true}},
   },
-  }
 }
 
 return M
