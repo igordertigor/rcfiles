@@ -16,13 +16,13 @@ autocmd("FileType", {
       vim.keymap.set("i", "@v", "☑", {nowait = true})
       vim.keymap.set("i", "@x", "☒", {nowait = true})
     else
-      vim.keymap.set("i", "->", "->", {nowait = true})
-      vim.keymap.set("i", "~>", "~>", {nowait = true})
-      vim.keymap.set("i", "=>", "=>", {nowait = true})
-      vim.keymap.set("i", "|>", "|>", {nowait = true})
-      vim.keymap.set("i", "@o", "@o", {nowait = true})
-      vim.keymap.set("i", "@v", "@v", {nowait = true})
-      vim.keymap.set("i", "@x", "@x", {nowait = true})
+      vim.keymap.del("i", "->")
+      vim.keymap.del("i", "~>")
+      vim.keymap.del("i", "=>")
+      vim.keymap.del("i", "|>")
+      vim.keymap.del("i", "@o")
+      vim.keymap.del("i", "@v")
+      vim.keymap.del("i", "@x")
     end
   end
 })
