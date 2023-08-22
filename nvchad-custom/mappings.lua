@@ -16,7 +16,8 @@ M.markdown = {
       end,
       "cross"
     },
-    ["<leader>N"] = {":Telescope find_files find_command=./new<CR><CR>", "new note", opts = {nowait = true}},
+    -- ["<leader>N"] = {":Telescope find_files find_command=./new<CR><CR>", "new note", opts = {nowait = true}},
+    ["<leader>N"] = {":e `./new`<CR>", "new note", opts = {nowait = true}}
   },
 }
 
