@@ -1,11 +1,12 @@
 local null_ls = require('null-ls')
 local opts = {
+  -- debug = true,
   sources = {
     -- Python
     null_ls.builtins.formatting.blue,
     null_ls.builtins.diagnostics.mypy.with(
       {
-        prefer_local = ".venv/bin/mypy"
+        command = ".venv/bin/mypy"  -- Note: mason prepends it's path! Maybe remove mypy from the mason config?
       }
     ),
     null_ls.builtins.diagnostics.ruff,
