@@ -14,6 +14,8 @@ set from=mail@ingofruend.net
 # set sendmail="/usr/bin/msmtp"
 set envelope_from=yes
 set use_from=yes
+set smtp_url=smtps://mail@ingofruend.net@smtprelaypool.ispgateway.de
+set smtp_pass=`lpass show --password 6169987141134823544`
 
 # Some convenience
 set move=no
@@ -95,7 +97,7 @@ folder-hook "ingofruend/*" 'push "<tag-prefix-cond><tag-message><end-cond><tag-p
 folder-hook "ingostarr/*" 'push "<tag-prefix-cond><tag-message><end-cond><tag-pattern>~f dj@ingostarr.de<enter><tag-prefix-cond><clear-flag>N<tag-prefix-cond><tag-message>"'
 
 
-set sendmail='/home/ingo/bin/xcheck_email_for_attachment.sh'
+# set sendmail='/home/ingo/bin/xcheck_email_for_attachment.sh'
 
 # Set signature depending on sender
 set signature="~/.mail/signatures/signature.py|"
@@ -132,3 +134,7 @@ macro generic,index,pager M "<shell-escape>mbsync -a<return>" "sync mailboxes"
 auto_view text/html
 
 source ~/.mutt/filtering
+
+# Ask if we seem to have forgotten an attachment
+set abort_noattach=ask-yes
+set abort_noattach_regexp="(attach|Anhang|anbei|angeh.ngt)"

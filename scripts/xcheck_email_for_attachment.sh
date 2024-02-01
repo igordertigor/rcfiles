@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SENDMAIL=/usr/sbin/sendmail
-# SENDMAIL="/usr/bin/msmtp"
+# SENDMAIL=/usr/sbin/sendmail
+SENDMAIL="/usr/bin/msmtp"
 
 ###
 # this script uses a GUI app called "zenity" to ask for confirmation,

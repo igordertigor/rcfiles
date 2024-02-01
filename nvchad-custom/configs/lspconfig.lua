@@ -24,7 +24,6 @@ lspconfig.ltex.setup{
   settings ={
     ltex={
       language = "en-US",
-      -- language = "de-DE",
     },
   },
   on_attach = on_attach,
