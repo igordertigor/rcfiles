@@ -66,7 +66,8 @@ mailboxes        \
     +archive/2020 \
     +archive/2021 \
     +archive/2022 \
-    +archive/2023
+    +archive/2023 \
+    +archive/2024
 
 ######################## Identities ############################
 # Changing identity

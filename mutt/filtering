@@ -65,6 +65,11 @@ group -group nonpersonal -addr 'genmarkawelsh15@gmail.com'
 group -group nonpersonal -addr 'MEC'
 group -group nonpersonal -addr 'Expedia'
 group -group nonpersonal -addr 'editor.sumi5@gmail.com'
+group -group nonpersonal -addr 'travelocity.com'
+group -group nonpersonal -addr 'hi@sampleson.com'
+group -group nonpersonal -addr 'linkedin@e.linkedin.com'
+group -group nonpersonal -addr 'email@email.etsy.com'
+group -group nonpersonal -addr 'research.com'
 
 # Tag spam-like messages with C-w
 macro index \cw "T (~s SPAM \
@@ -77,4 +82,4 @@ macro index \cw "T (~s SPAM \
                    )<enter>"
 
 # Tag old messages oder than 3 months
-macro index \co "T (~d >3m ~d 01/01/2023-31/12/2023)<enter>;s=archive/2023/"
+macro index \co "T (~d >3m ~d 01/01/2024-31/12/2024)<enter>;s=archive/2024/"
