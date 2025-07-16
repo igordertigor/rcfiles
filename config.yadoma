@@ -102,3 +102,8 @@ alacritty:
     -
       src: alacritty.yml
       dest: .config/alacritty/alacritty.yml
+python:
+  files:
+    -
+      src: sitecustomize.py
+      dest: .config/python/sitecustomize.py
