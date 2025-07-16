@@ -61,20 +61,21 @@ function mkvenv(){
     fi
 
     echo "Will setup py{$pyversion} virtualenv in $venv_name"
-    python${pyversion} -m venv $venv_name
+    uv venv -p python${pyversion}
     source $venv_name/bin/activate
-    pip install -U pip
 
     if [ -e setup.cfg ]; then
-        pip install -e .
+        uv pip install -e .
     elif [ -e pyproject.toml ]; then
-        pip install -e .
+        uv pip install -e .
     elif [ -e requirements.txt ] ; then
-        pip install -r requirements.txt
+        uv pip install -r requirements.txt
     fi
+
+    cp $HOME/.config/python/sitecustomize.py $venv_name/lib/python$pyversion/site-packages/
 }
 
-alias venv="source .venv/bin/activate"
+alias venv="[ -d .venv ] && source .venv/bin/activate || [ -d venv ] && source venv/bin/activate"
 
 
 setopt clobber
@@ -149,12 +150,12 @@ function ssh_meeting () {
 
 function git_pull_and_delete () {
     CURRENT_BRANCH=$(git branch --show-current)
-    if [[ "$CURRENT_BRANCH" == "master" ]];
+    if [[ "$CURRENT_BRANCH" == "main" ]];
     then
-        echo "On master, not doing anything";
+        echo "On main, not doing anything";
     else
         echo "Will trash this branch"
-        git checkout master
+        git checkout main
         git pull
         git branch -d "$CURRENT_BRANCH"
     fi
@@ -166,8 +167,8 @@ if [[ $(hostname) == 'verbally' ]]; then
   source $HOME/.zfunc/_vtool
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+export AZURE_DEV_COLLECT_TELEMETRY=no
 
-eval "$(pyenv virtualenv-init -)"
+eval "$(direnv hook zsh)"
+
+alias z.ed=/opt/homebrew/bin/zed
